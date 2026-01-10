@@ -1,4 +1,6 @@
 (sym_lib_table
   (version 7)
-  (lib (name "pam8403")(type "KiCad")(uri "/Users/pierre/Desktop/stereo apple 2/gemini/pam8403-module-kicad-lib/moduleo-pam8403/pam8403.kicad_sym")(options "")(descr ""))
+  (lib (name "pam8403")(type "KiCad")(uri "${KIPRJMOD}/../pam8403-module-kicad-lib/moduleo-pam8403/pam8403.kicad_sym")(options "")(descr ""))
+  (lib (name "VST104")(type "Legacy")(uri "${KIPRJMOD}/../VST104-Libraries/VST104_symbols/VST104.lib")(options "")(descr ""))
+  (lib (name "PTR902-1020K-A502")(type "KiCad")(uri "${KIPRJMOD}/../PTR902-1020K-A502/PTR902-1020K-A502.kicad_sym")(options "")(descr ""))
 )

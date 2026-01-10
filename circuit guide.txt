@@ -1,149 +1,142 @@
-Final Circuit Design: Reformulated Description (with Input Mixing)
+Revision 4 Circuit Design (with Input Mixing and Volume Switch controlling power to Amplifier)
 
-Component List (Reference Designators):
+Note: required libraries for KiCad (add manually, project specific):
+* https://github.com/johnnycubides/pam8403-module-kicad-lib
+* https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (not a repo, download Symbol & Footprint files)
 
-* U1 / U_AMP: PAM8403 Module
-* R1 / R_VOL: 10KΩ Dual-Gang Logarithmic Potentiometer
-* S1A,B / SW_VOL_OFFA, SW_VOL_OFFB: Two SW_SPDT symbols representing the DPDT switch on R_VOL.
-* S2,3,4 / SW_OUT_SELA, SW_OUT_SELB, SW_OUT_SELC: Three SW_SPDT symbols representing the 3P3T SW_OUT_SELECT rotary switch.
+--
+
+Component List (Reference Designators)
+
+* U1 / U_AMP: PAM8403 Module (Amplifier IC)
+* R1,2 / R_VOL_L, R_VOL_R, SW_R_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
+* SW2A,B / SW_HP_OVERRIDEA, SW_HP_OVERRIDEB: DPDT symbol representing rotary or slider switch
+* K1 / RL_AUDIO_RELAY: Relay_DPDT symbol (Mode Relay Routing Audio to Amplifier or Line-Out)
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
-* J2 / J_SCARD_IN: AudioJack3_Ground_Switch symbol
-* J3 / J_HP_OUT: AudioJack3_Ground_Switch symbol
-* J4 / J_LINE_OUT: AudioJack3_Ground symbol
+* J2 / J_SCARD_IN: AudioJack3_Ground_Switch symbol (Switching Sound Card Input Jack)
+* J3 / J_HP_OUT: AudioJack3_Ground_Switch symbol  (Switching Headphone Jack)
+* J4 / J_LINE_OUT: AudioJack3_Ground symbol (Line-Out Jack)
 * J5 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
 * J6 / J_SPKR_OUT: Conn_01x04 symbol (Speaker Output)
 
-* J7 / JP_EN_SPKR_IN: Conn_01x02 symbol (Jumper to enable Motherboard Audio)
+* J7 / JP_EN_SPKR_IN: Conn_01x02 symbol (Jumper to Enable Input from Motherboard Audio)
 * J8,9 / JP_EN_RSPKR_OUTL, JP_EN_RSPKR_OUTR: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
+* J10 / JP_EN_AMP: Conn_01x02 symbol (Jumper to enable +5V power to U_AMP)
 
-* C1 / C_MB_DC_BLOCK: 1µF Capacitor (Motherboard audio DC blocking)
-* C2 / C_MB_FILTER: 10nF Capacitor (Motherboard audio filtering)
-* R2 / R_MB_FILTER: 1kΩ Resistor (Motherboard audio filtering)
-* R3,4 / R_MIX_SCARD_L, R_MIX_SCARD_R: 10kΩ Resistors (Input mixer for Sound Card audio)
-* R5,6 / R_MIX_MB_L, R_MIX_MB_R: 10kΩ Resistors (Input mixer for Motherboard audio)
-* R7,8 / R_MONO_MIX_L, R_MONO_MIX_R: 10kΩ Resistors (Output mono mix for speakers)
-* R9,10 / R_HP_PROT_L, R_HP_PROT_R: 33Ω Resistors (Headphone protection)
-* R11,12 / R_LINE_ATTEN_L, R_LINE_ATTEN_R: 4.7kΩ Resistors (Line-out attenuation, series)
-* R13,14 / R_SHUNT_L, R_SHUNT_R: 1kΩ Resistors (Line-out attenuation, shunt)
+* D1 / D_RELAY_FLYBACK: 1N4148 Diode (Flyback Diode for Mode Relay)
+* C1 / C_MB_DC_BLOCK: 1µF Capacitor (Motherboard Audio DC Blocking)
+* C2 / C_MB_FILTER: 10nF Capacitor (Motherboard Audio Filtering)
+* R3 / R_MB_FILTER: 1kΩ Resistor (Motherboard Audio Filtering)
+* R4,5 / R_MIX_SCARD_L, R_MIX_SCARD_R: 10kΩ Resistors (Input Mixer for Sound Card Audio)
+* R6,7 / R_MIX_MB_L, R_MIX_MB_R: 10kΩ Resistors (Input Mixer for Motherboard Audio)
+* R8,9 / R_MONO_MIX_L, R_MONO_MIX_R: 10kΩ Resistors (Output Mono Mix for speakers)
+* R10,11 / R_HP_PROT_L, R_HP_PROT_R: 33Ω Resistors (Headphone Protection)
+* R12,13 / R_LINE_ATTEN_L, R_LINE_ATTEN_R: 4.7kΩ Resistors (Line-out Attenuation, Series)
+* R14,15 / R_SHUNT_L, R_SHUNT_R: 1kΩ Resistors (Line-out Attenuation, Shunt)
 
 ---
 
 Schematic Description
 
 Block 1: Main Power Input & Amplifier Power Control
-* J_PWR: Pin 1 connects to +5V_IN, Pin 2 connects to GND.
-* SW_OUT_SELA (Power Pole):
-    * Common: Connects to +5V_IN.
-    * Throw 1 ("Off"): No connection.
-    * Throw 2 ("Auto"): Connects to VCC_AMP.
-    * Throw 3 ("Forced Speaker"): Connects to VCC_AMP.
-* U_AMP: VCC pin connects to VCC_AMP; GND pin connects to GND.
+* J_PWR (Main Power Header):
+    * Pin 1 (+5V_IN): Connect Main 5V power input to Pin 1 of JP_EN_AMP.
+    * Pin 2 (GND): Main ground reference.
+* JP_EN_AMP (Amplifier Enable Jumper):
+    * Pin 1: Connect to +5V_IN.
+    * Pin 2: Connect to SWITCHED_V_IN.
+* Effect: When a jumper shunt is present, SWITCHED_V_IN receives power. When the jumper is removed, SWITCHED_V_IN is disconnected, disables R_VOL, and indirectly U_AMP.
 
-Block 2: Input Stage & Mixer
-* J_SPKR_IN: Pin 1 (MB_SPKR) gets signal from Apple II; Pin 2 (GND) connects to GND.
-* JP_EN_SPKR_IN: The MB_SPKR signal from J_SPKR_IN connects to Pin 1. Pin 2 connects to the rest of the circuit. A jumper shunt enables the motherboard audio.
-* Motherboard Audio Conditioning: The signal from JP_EN_SPKR_IN goes through series C_MB_DC_BLOCK, then series R_MB_FILTER. A C_MB_FILTER capacitor connects from after R_MB_FILTER to GND. This creates the AUDIO_MB_AC net.
-* J_SCARD_IN (Switching Jack):
-    * Tip pin provides the JACK_L signal.
-    * Ring pin provides the JACK_R signal.
+Block 2: Input Stage & Pre-Mixer
+* J_SPKR_IN (Motherboard Audio Header):
+    * Pin 1 (MB_SPKR): The Apple II speaker signal.
+    * Pin 2 (GND): Another Connection to GND.
+* JP_EN_SPKR_IN (Jumper to Enable MB Audio):
+    * Pin 1: Connect to the MB_SPKR signal from J_SPKR_IN.
+    * Pin 2: Connect to the MB_SPKR_ENABLED net.
+    * Effect: Placing a jumper shunt on JP_EN_SPKR_IN enables the motherboard audio. Removing it disables it.
+* Motherboard Audio Conditioning:
+    * The MB_SPKR_ENABLED net goes through series C_MB_DC_BLOCK.
+    * Then, it goes through series R_MB_FILTER.
+    * A C_MB_FILTER capacitor connects from after R_MB_FILTER to GND. This creates the AUDIO_MB_AC net.
+* J_SCARD_IN (Switching Line-In Jack):
+    * Tip pin provides the JACK_L net.
+    * Ring pin provides the JACK_R net.
     * Sleeve pin connects to GND.
     * The Tip_NC and Ring_NC (Normally Closed) pins connect to GND for noise prevention when no plug is inserted.
+
+Block 3: Mixer
 * Input Mixer:
     * AUDIO_MB_AC -> R_MIX_MB_L -> INPUT_AUDIO_L net.
     * AUDIO_MB_AC -> R_MIX_MB_R -> INPUT_AUDIO_R net.
     * JACK_L -> R_MIX_SCARD_L -> INPUT_AUDIO_L net.
     * JACK_R -> R_MIX_SCARD_R -> INPUT_AUDIO_R net.
-* Effect: The INPUT_AUDIO_L/R nets now contain a mix of the motherboard audio and the line-in signal (if present).
+* Effect: The INPUT_AUDIO_L/R nets now contain a mix of the conditioned motherboard audio (if JP_EN_SPKR_IN is installed) and the line-in signal (if present in J_SCARD_IN).
 
-Block 3: Mode Selection (Volume Knob Switch) & Volume Control
-* SW_VOL_OFFA/B (DPDT on R_VOL):
-    * The Common pins connect to INPUT_AUDIO_L and INPUT_AUDIO_R.
-    * Throw 1 (Knob OFF) connects to LINE_OUT_SOURCE_L and LINE_OUT_SOURCE_R.
-    * Throw 2 (Knob ON) connects to VOLUME_IN_L and VOLUME_IN_R.
-* R_VOL (Potentiometer):
-    * The VOLUME_IN_L/R nets connect to the potentiometer inputs.
+Block 4: Line-Out / Amp Mode Selection (Volume Knob Switch) & Volume Control
+* SW_R_VOL (SPST Switch on R_VOL):
+    * Conect one terminal to SWITCHED_V_IN.
+    * Connect the other terminal to the AMP_CONTROL_SIGNAL net.
+* D_RELAY_FLYBACK (Flyback Diode):
+    * Cathode (banded end): Connect to AMP_CONTROL_SIGNAL.
+    * Anode (non-banded end): Connect to GND.
+* RL_AUDIO_RELAY (DPDT Relay) Coil Connections:
+    * One side of the relay coil (e.g., A1): Connect to AMP_CONTROL_SIGNAL.
+    * The other side of the relay coil (e.g., A2): Connect to GND.
+* RL_AUDIO_RELAY (DPDT Relay) Audio Contact Connections:
+    * Pole A (Left Channel):
+        * Common pin: Connect to INPUT_AUDIO_L.
+        * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_L.
+        * Normally Open (NO) pin: Connect to VOLUME_IN_L.
+    * Pole B (Right Channel):
+        * Common pin: Connect to INPUT_AUDIO_R.
+        * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_R.
+        * Normally Open (NO) pin: Connect to VOLUME_IN_R.
+* R_VOL (Dual-Gang Potentiometer):
+    * The VOLUME_IN_L/R nets connect to the inputs of the two potentiometer gangs.
     * The wipers provide the VOLUME_OUT_L and VOLUME_OUT_R nets.
-
-Block 4: Line-Out Jack
-* J_LINE_OUT:
-    * LINE_OUT_SOURCE_L -> R_LINE_ATTEN_L -> Left Pin of J_LINE_OUT.
-    * LINE_OUT_SOURCE_R -> R_LINE_ATTEN_R -> Right Pin of J_LINE_OUT.
-    * Connect a shunt resistor (R_SHUNT_L/R_SHUNT_R) from each output pin to GND to form the voltage divider.
+* Effect:
+    * When SW_R_VOL is OFF:
+        * The AMP_CONTROL_SIGNAL net and U_AMP are disconnected from SWITCHED_V_IN.
+        * Audio is routed to LINE_OUT_SOURCE_L/R.
+    * When SW_R_VOL is ON:
+        * The AMP_CONTROL_SIGNAL net and U_AMP are connected to SWITCHED_V_IN.
+        * Audio is routed to VOLUME_IN_L/R for amplification.
 
 Block 5: Mono Mix Generation & Amplifier Input (Two-Jumper Version)
 * Mono Mix Generation: A MONO_MIX_POINT net is created by mixing VOLUME_OUT_L and VOLUME_OUT_R through R_MONO_MIX_L and R_MONO_MIX_R.
 * JP_EN_RSPKR_OUTL (Left Channel Jumper):
-    * Pin 1 (Stereo): Connects to VOLUME_OUT_L.
-    * Pin 2 (Common): Connects to AMP_INPUT_L.
-    * Pin 3 (Mono): Connects to MONO_MIX_POINT.
+    * Pin 1 (Stereo): Connect to VOLUME_OUT_L.
+    * Pin 2 (Common): Connect to AMP_INPUT_L.
+    * Pin 3 (Mono): Connect to MONO_MIX_POINT.
 * JP_EN_RSPKR_OUTR (Right Channel Jumper):
-    * Pin 1 (Stereo): Connects to VOLUME_OUT_R.
-    * Pin 2 (Common): Connects to AMP_INPUT_R.
-    * Pin 3 (Mono): Connects to GND.
-* U_AMP: The L and R input pins connect to AMP_INPUT_L and AMP_INPUT_R.
+    * Pin 1 (Stereo): Connect to VOLUME_OUT_R.
+    * Pin 2 (Common): Connect to AMP_INPUT_R.
+    * Pin 3 (Mono): Connect to GND.
 
-Block 6: Amplified Output Routing
-* SW_OUT_SELB & SW_OUT_SELC (Output Selector):
-    * Common pins connect to the L+ and R+ outputs of U_AMP.
-    * Throw 1 ("Off"): No connection.
-    * Throw 2 ("Auto"): Connect to the headphone protection resistors (R_HP_PROT_L/R_HP_PROT_R).
-    * Throw 3 ("Forced Speaker"): Connect directly to the L+ and R+ pins of J_SPKR_OUT.
+Block 6: Applifier IC
+* U_AMP (PAM8403 Module):
+    * VCC pin: Connect to AMP_CONTROL_SIGNAL.
+    * Ground pin: Connect to GND.
+    * L and R input pins: Connect to AMP_INPUT_L and AMP_INPUT_R.
+    * L+ and R+ output pins: Connect to the common pins of SW_HP_OVERRIDEA/B.
+    * L- and R- output pins: Connect to the L- and R- pins of J_SPKR_OUT.
+
+Block 7: Amplified Output Routing
+* SW_HP_OVERRIDEA & SW_HP_OVERRIDEB (Headphone override):
+    * Common pins: Connect to the L+ and R+ outputs of U_AMP.
+    * Throw 1 ("Auto"): Connect to the input of the headphone protection resistors (R_HP_PROT_L/R_HP_PROT_R).
+    * Throw 2 ("Forced Speaker"): Connect directly to the L+ and R+ pins of J_SPKR_OUT.
 * J_HP_OUT (Switching Headphone Jack):
-    * The Normally-Closed pins connect to the L+ and R+ pins of J_SPKR_OUT.
-    * The main audio output pins (Tip/Ring) connect to the headphone protection resistors (R_HP_PROT_L/R_HP_PROT_R).
+    * T/R (Tip/Ring) pins: Connect to the output of the headphone protection resistors (R_HP_PROT_L/R_HP_PROT_R).
+    * TN/RN (Tip Normal/Ring Normal) pins: Connect to the L+ and R+ pins of J_SPKR_OUT.
 * J_SPKR_OUT (Speaker Output Header):
-    * L+/R+ pins are fed by either J_HP_OUT or SW_OUT_SELB/C.
-    * L-/R- pins connect directly to the L-/R- outputs of U_AMP.
+    * L+/R+ pins: Fed by either the TN/RN pins of J_HP_OUT (Auto Mode), or the "Forced Speaker" throws of SW_HP_OVERRIDEA/B.
+    * L-/R- pins: Connect directly to the L-/R- outputs of U_AMP.
 
-
-
-.title KiCad schematic
-.save all
-.probe alli
-.probe p(R9)
-.probe p(R10)
-.probe p(R12)
-.probe p(R14)
-.probe p(R7)
-.probe p(R13)
-.probe p(R8)
-.probe p(R11)
-.probe p(R3)
-.probe p(R5)
-.probe p(R4)
-.probe p(R6)
-.probe p(C2)
-.probe p(C1)
-.probe p(R2)
-J6 __J6
-J3 __J3
-R9 Net-_R9-Pad1_ Net-_J3-PadT_ 33
-R10 Net-_R10-Pad1_ Net-_J3-PadR_ 33
-R12 Net-_J4-PadR_ Net-_S1B-A_ 4.7k
-R14 Net-_J4-PadR_ GND 1k
-J4 __J4
-S3 __S3
-S2 __S2
-S4 __S4
-U1 __U1
-J9 __J9
-J8 __J8
-R7 /VOLUME_OUT_L /MONO_MIX_POINT 10k
-R13 Net-_J4-PadT_ GND 1k
-R8 /VOLUME_OUT_R /MONO_MIX_POINT 10k
-R11 /LINE_OUT_SOURCE_L Net-_J4-PadT_ 4.7k
-R3 /JACK_R /INPUT_AUDIO_L 10k
-R5 Net-_R2-Pad2_ /INPUT_AUDIO_L 10k
-R4 /JACK_L Net-_S1B-B_ 10k
-R6 Net-_R2-Pad2_ Net-_S1B-B_ 10k
-J2 __J2
-J7 __J7
-J1 __J1
-J5 __J5
-S1 __S1
-R1 __R1
-C2 Net-_C1-Pad2_ GND 10n
-C1 Net-_J7-Pin_2_ Net-_C1-Pad2_ 1u
-R2 Net-_C1-Pad2_ Net-_R2-Pad2_ 1k
-.end
+Block 8: Line-Out Jack
+* J_LINE_OUT:
+    * LINE_OUT_SOURCE_L -> R_LINE_ATTEN_L -> Left Pin of J_LINE_OUT.
+    * LINE_OUT_SOURCE_R -> R_LINE_ATTEN_R -> Right Pin of J_LINE_OUT.
+    * Connect a shunt resistor (R_SHUNT_L/R_SHUNT_R) from each output pin to GND to form the voltage divider.
