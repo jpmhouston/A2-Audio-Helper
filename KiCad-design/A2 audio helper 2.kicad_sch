@@ -3366,7 +3366,7 @@
 		)
 	)
 	(rectangle
-		(start 182.88 123.19)
+		(start 181.61 123.19)
 		(end 223.52 158.75)
 		(stroke
 			(width 0.254)
@@ -3432,7 +3432,7 @@
 	)
 	(rectangle
 		(start 88.9 92.71)
-		(end 124.46 123.19)
+		(end 128.27 123.19)
 		(stroke
 			(width 0.254)
 			(type dot)
@@ -3443,9 +3443,116 @@
 		)
 		(uuid f12b7252-8664-4f2c-bafe-b8f0e3bd7b21)
 	)
+	(text "Mono Mix Generation"
+		(exclude_from_sim no)
+		(at 178.562 16.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "0d65b274-b205-4e70-b491-8eaf98096940")
+	)
+	(text "3.5mm sound card input jack\n"
+		(exclude_from_sim no)
+		(at 18.796 101.854 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "15990dba-5394-4b69-85f1-f16dc825afec")
+	)
+	(text "10KΩ Dual-gang logarithmic potentiometer,\nswitched"
+		(exclude_from_sim no)
+		(at 60.452 177.546 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify right)
+		)
+		(uuid "2bc047d2-529a-4115-8eea-cd9bb68db2d9")
+	)
+	(text "Motherboard speaker input\nconnector"
+		(exclude_from_sim no)
+		(at 46.228 59.182 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify right)
+		)
+		(uuid "2dc561ff-86a7-4734-8029-ee9bbd8b0d49")
+	)
+	(text "Line-Out Conditioning"
+		(exclude_from_sim no)
+		(at 192.532 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "336ba1f3-cfe1-4dd0-96e9-0bdb55b1f55a")
+	)
+	(text "3.5mm line-out jack"
+		(exclude_from_sim no)
+		(at 246.38 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "5dc34fec-c624-4244-a5e3-d2f078795ddd")
+	)
+	(text "Headphone\nprotection"
+		(exclude_from_sim no)
+		(at 200.66 30.226 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+		)
+		(uuid "6e03f0ef-b5c2-4821-bd80-294a1e402248")
+	)
+	(text "Motherboard Audio Conditioning"
+		(exclude_from_sim no)
+		(at 91.186 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "8f18b0f2-caf7-49c3-95a7-a1f7aa346817")
+	)
+	(text "DC block"
+		(exclude_from_sim no)
+		(at 109.22 78.994 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify right)
+		)
+		(uuid "942f5d9a-0452-4c00-ab12-4d64daffb150")
+	)
 	(text "off = Amplifier off, Audio Input directed\n      to Line-Out\non = Audio Input to Potentiometer enabled,\n      Amplifier on, Volume output\n      from Potentiometer sent to Amplifier\n      (via Mono Mixer), Line-Out disabled"
 		(exclude_from_sim no)
-		(at 14.478 185.928 0)
+		(at 17.526 187.706 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3453,6 +3560,54 @@
 			(justify left)
 		)
 		(uuid "96409210-f8bb-4dd3-a7cc-d9c3d124256c")
+	)
+	(text "Attenuation"
+		(exclude_from_sim no)
+		(at 184.15 154.686 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "9b8ff029-5ef7-4867-bf21-104ae81e41e7")
+	)
+	(text "Input Mixer"
+		(exclude_from_sim no)
+		(at 101.092 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "a061f24d-6317-4df4-98fe-80094f23788f")
+	)
+	(text "Enable amplifier jumper"
+		(exclude_from_sim no)
+		(at 22.606 39.878 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "a3e1d5d8-a75c-44ab-936d-fac9d12aaa16")
+	)
+	(text "Flyback diode"
+		(exclude_from_sim no)
+		(at 91.44 166.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "bf7bf337-b318-425d-b5d9-fff34c7913a4")
 	)
 	(text "1+2: stock speaker - left / mono\n3+4: optional extra speaker - right"
 		(exclude_from_sim no)
@@ -3466,6 +3621,66 @@
 		)
 		(uuid "d48c619d-ab0f-43d9-b665-bbea10491549")
 	)
+	(text "Shunt"
+		(exclude_from_sim no)
+		(at 206.502 154.686 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "e15500fa-6b69-4ec7-ad56-9bdd0016e021")
+	)
+	(text "Filter"
+		(exclude_from_sim no)
+		(at 114.046 67.564 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify right)
+		)
+		(uuid "e5677792-567d-4a56-a22b-8309cccff358")
+	)
+	(text "Enable speaker input jumper"
+		(exclude_from_sim no)
+		(at 18.034 79.248 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "eb7d9a39-bce2-4327-9a31-0595242fea8d")
+	)
+	(text "3.5mm headphone jack"
+		(exclude_from_sim no)
+		(at 217.932 17.018 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "ebac7d7c-3955-4321-bece-937fda2e45f9")
+	)
+	(text "+5V Power/Ground connector"
+		(exclude_from_sim no)
+		(at 17.526 22.098 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "ed88f93c-0516-45c6-88fd-1409e554b65b")
+	)
 	(text "Jumpers J8/9 are to be connected in tandem\n\npins 1 & 2 connected:\nstereo output to stock internal speaker (LSPKR)\nand modded second internal speaker (RSPKR).\n\npins 2 & 3 connected:\nmono output to stock speaker only (LSPKR)."
 		(exclude_from_sim no)
 		(at 233.934 95.504 0)
@@ -3478,28 +3693,58 @@
 		)
 		(uuid "f04ec30d-3422-4151-8b21-122097228283")
 	)
-	(text "PAM8403\namplifier IC"
+	(text "Line-Out Conditioning"
 		(exclude_from_sim no)
-		(at 132.588 56.134 0)
+		(at 191.77 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "f273c63f-a40e-4d59-8627-2c1aa32b22a6")
+	)
+	(text "Mode Selection, Power & Audio Routing"
+		(exclude_from_sim no)
+		(at 122.936 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "f2954db2-f66a-4738-bde5-1c2fe5a2896e")
+	)
+	(text "Amplifier\nmodule"
+		(exclude_from_sim no)
+		(at 143.256 56.134 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "fea93a1c-74a2-4915-a413-bf0265319856")
+	)
+	(text "Internal speaker output connector"
+		(exclude_from_sim no)
+		(at 248.666 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 0 255 1)
+			)
+			(justify left)
+		)
+		(uuid "ff055c6f-4571-4735-a20e-d2d2ecdb56e5")
 	)
 	(junction
 		(at 53.34 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "116cf40a-1c53-40bf-9b7d-eebc0c3059d3")
-	)
-	(junction
-		(at 166.37 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1b5ca340-ede3-4544-b8aa-601f78008933")
 	)
 	(junction
 		(at 233.68 59.69)
@@ -3512,12 +3757,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "304fc864-d313-42f6-9fd5-bf5939ecba85")
-	)
-	(junction
-		(at 50.8 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3285ac5d-760e-4e85-9b21-70eccc137804")
 	)
 	(junction
 		(at 114.3 110.49)
@@ -3562,18 +3801,6 @@
 		(uuid "6c837c04-02c1-4baa-9ae9-4944704a0805")
 	)
 	(junction
-		(at 53.34 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7bf6c90d-a230-48bd-92de-19a2810a087e")
-	)
-	(junction
-		(at 53.34 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8967af48-f944-4235-a651-ff7fce9a8b59")
-	)
-	(junction
 		(at 198.12 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3604,12 +3831,6 @@
 		(uuid "95b53847-6e92-41a2-b660-f41d386285c5")
 	)
 	(junction
-		(at 50.8 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9f90020c-6c8c-4520-b146-e395cb7bcb9c")
-	)
-	(junction
 		(at 200.66 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3638,6 +3859,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d5d32c65-2b73-474e-853a-013f35e986bb")
+	)
+	(junction
+		(at 72.39 173.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dafb4d2d-fa0d-409a-8953-b45d578d744e")
 	)
 	(junction
 		(at 45.72 123.19)
@@ -3739,16 +3966,6 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 27.94) (xy 50.8 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04ad805f-55b7-4c2c-958a-6fd67ecf8b72")
-	)
-	(wire
-		(pts
 			(xy 106.68 163.83) (xy 106.68 173.99)
 		)
 		(stroke
@@ -3769,17 +3986,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 100.33) (xy 161.29 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "060091f1-95fa-4ec3-b8aa-3380289e1b9d")
-	)
-	(wire
-		(pts
-			(xy 68.58 189.23) (xy 166.37 189.23)
+			(xy 63.5 189.23) (xy 166.37 189.23)
 		)
 		(stroke
 			(width 0)
@@ -3819,6 +4026,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 189.23) (xy 63.5 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bd99cd2-9679-4152-b454-ea2f8c848af7")
+	)
+	(wire
+		(pts
 			(xy 204.47 39.37) (xy 231.14 39.37)
 		)
 		(stroke
@@ -3846,6 +4063,16 @@
 			(type default)
 		)
 		(uuid "0e1c7d2e-e047-4bd5-a672-f7d0b3dca4f4")
+	)
+	(wire
+		(pts
+			(xy 52.07 67.31) (xy 52.07 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e666692-c188-4a7f-bf92-eff75cf5a992")
 	)
 	(wire
 		(pts
@@ -3886,6 +4113,16 @@
 			(type default)
 		)
 		(uuid "124850c0-659d-4d28-9e96-696c72f67535")
+	)
+	(wire
+		(pts
+			(xy 52.07 27.94) (xy 50.8 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1504f7bc-3215-46af-a861-4fe6df33f937")
 	)
 	(wire
 		(pts
@@ -3939,6 +4176,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 173.99) (xy 68.58 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b262bc2-357c-44af-9f85-6b95a47658fe")
+	)
+	(wire
+		(pts
 			(xy 242.57 128.27) (xy 200.66 128.27)
 		)
 		(stroke
@@ -3959,13 +4206,23 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 107.95) (xy 53.34 110.49)
+			(xy 53.34 107.95) (xy 53.34 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1f8293f5-c461-462a-8162-8be618abdbe7")
+	)
+	(wire
+		(pts
+			(xy 72.39 173.99) (xy 76.2 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2274d9c6-72ca-4602-9a34-8a7aefe5d39c")
 	)
 	(wire
 		(pts
@@ -3979,16 +4236,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 113.03) (xy 53.34 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28240858-fc8d-4bfb-8d4b-8ed51e0bc8a2")
-	)
-	(wire
-		(pts
 			(xy 135.89 140.97) (xy 185.42 140.97)
 		)
 		(stroke
@@ -3996,16 +4243,6 @@
 			(type default)
 		)
 		(uuid "2dbbea6a-4969-4363-9861-a5388abbc9d4")
-	)
-	(wire
-		(pts
-			(xy 53.34 110.49) (xy 95.25 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2dcde97a-1843-4144-bbf0-122054ac930e")
 	)
 	(wire
 		(pts
@@ -4019,7 +4256,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 114.3) (xy 163.83 186.69)
+			(xy 163.83 114.3) (xy 163.83 185.42)
 		)
 		(stroke
 			(width 0)
@@ -4129,7 +4366,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 110.49) (xy 50.8 110.49)
+			(xy 50.8 110.49) (xy 95.25 110.49)
 		)
 		(stroke
 			(width 0)
@@ -4189,16 +4426,6 @@
 	)
 	(wire
 		(pts
-			(xy 165.735 68.58) (xy 182.88 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f771883-8f31-4ebd-a462-9aa6ed25eb2b")
-	)
-	(wire
-		(pts
 			(xy 102.87 115.57) (xy 119.38 115.57)
 		)
 		(stroke
@@ -4209,17 +4436,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 60.96) (xy 142.8137 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50d1a949-238b-4af1-a1e9-4612d1895b6a")
-	)
-	(wire
-		(pts
-			(xy 182.88 67.31) (xy 182.88 68.58)
+			(xy 181.61 67.31) (xy 181.61 68.58)
 		)
 		(stroke
 			(width 0)
@@ -4249,13 +4466,23 @@
 	)
 	(wire
 		(pts
-			(xy 165.735 66.04) (xy 180.34 66.04)
+			(xy 68.58 173.99) (xy 68.58 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5759dea2-c69e-4a0c-8e71-5789676ba382")
+		(uuid "540a887f-ea7b-415b-95e8-660669f8f0f8")
+	)
+	(wire
+		(pts
+			(xy 45.72 124.46) (xy 45.72 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56acf197-7b48-4bbe-90f7-a1c7da8b756b")
 	)
 	(wire
 		(pts
@@ -4279,13 +4506,23 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 115.57) (xy 95.25 115.57)
+			(xy 50.8 115.57) (xy 95.25 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "598c40cb-3075-496d-8df5-d265e522b937")
+	)
+	(wire
+		(pts
+			(xy 165.735 68.58) (xy 181.61 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a252797-244b-42a6-8435-e788f8b71a5d")
 	)
 	(wire
 		(pts
@@ -4339,26 +4576,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 172.72) (xy 76.2 186.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "604482a7-e093-4074-b512-98f790a5ad98")
-	)
-	(wire
-		(pts
-			(xy 45.72 115.57) (xy 50.8 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "633b567c-1375-41f2-b257-ef9c663fc210")
-	)
-	(wire
-		(pts
 			(xy 173.99 58.42) (xy 173.99 62.23)
 		)
 		(stroke
@@ -4399,16 +4616,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 104.14) (xy 166.37 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b2a6ea3-f537-4fdd-ab02-cd4ed4a8b4c3")
-	)
-	(wire
-		(pts
 			(xy 45.72 123.19) (xy 53.34 123.19)
 		)
 		(stroke
@@ -4416,16 +4623,6 @@
 			(type default)
 		)
 		(uuid "6c0b6493-51fc-41ae-a261-e002d9dc596f")
-	)
-	(wire
-		(pts
-			(xy 53.34 110.49) (xy 53.34 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c9459c2-4381-4b7b-be54-c50b7f490000")
 	)
 	(wire
 		(pts
@@ -4469,13 +4666,13 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 114.3) (xy 205.74 114.3)
+			(xy 166.37 104.14) (xy 166.37 189.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "72554359-05b1-4770-a2db-6f48d3077a1d")
+		(uuid "72c70f91-7fcf-4aeb-8f97-64e616a55de5")
 	)
 	(wire
 		(pts
@@ -4579,6 +4776,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 185.42) (xy 81.28 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e75a59f-8f2e-4562-ae6d-f2e66e2ef201")
+	)
+	(wire
+		(pts
 			(xy 68.58 151.13) (xy 151.13 151.13)
 		)
 		(stroke
@@ -4596,6 +4803,16 @@
 			(type default)
 		)
 		(uuid "8485826d-7881-419a-a96b-c9bd47656ebf")
+	)
+	(wire
+		(pts
+			(xy 52.07 29.21) (xy 52.07 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "862a4833-4b04-4d4d-8a72-8079948c6a44")
 	)
 	(wire
 		(pts
@@ -4629,23 +4846,13 @@
 	)
 	(wire
 		(pts
-			(xy 165.735 58.42) (xy 173.99 58.42)
+			(xy 165.735 60.96) (xy 167.64 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8be310c8-8604-45ea-ad01-bf8c85bb52e6")
-	)
-	(wire
-		(pts
-			(xy 53.34 115.57) (xy 50.8 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f3f3754-ba0a-40f9-b0dc-62cf00daf3d2")
+		(uuid "8e3b3030-f42c-47bf-838c-64fefe6a7126")
 	)
 	(wire
 		(pts
@@ -4686,6 +4893,16 @@
 			(type default)
 		)
 		(uuid "9402086d-8209-4101-836a-ae0815132766")
+	)
+	(wire
+		(pts
+			(xy 165.735 66.04) (xy 180.34 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "961e9bf4-b785-44ae-ad07-392e8c4d94e6")
 	)
 	(wire
 		(pts
@@ -4789,16 +5006,6 @@
 	)
 	(wire
 		(pts
-			(xy 165.735 60.96) (xy 167.64 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0d2a442-8309-44fa-bab7-12a12b9b5eb7")
-	)
-	(wire
-		(pts
 			(xy 148.59 171.45) (xy 148.59 182.88)
 		)
 		(stroke
@@ -4839,13 +5046,13 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 114.3) (xy 166.37 189.23)
+			(xy 142.875 60.96) (xy 135.89 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "abfce99e-61b9-4a33-a364-eda2f10f2369")
+		(uuid "a931407a-1922-48ed-a81d-6e42ff4c5f9e")
 	)
 	(wire
 		(pts
@@ -4879,16 +5086,6 @@
 	)
 	(wire
 		(pts
-			(xy 142.875 65.9895) (xy 138.43 65.9895)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "adac4d85-2be8-4318-a3ce-b2aeb65fac52")
-	)
-	(wire
-		(pts
 			(xy 236.22 31.75) (xy 236.22 36.83)
 		)
 		(stroke
@@ -4899,16 +5096,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 62.23) (xy 100.33 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b06f5e7b-c0df-471e-95da-66fa22ab6f50")
-	)
-	(wire
-		(pts
 			(xy 189.23 96.52) (xy 189.23 100.33)
 		)
 		(stroke
@@ -4916,6 +5103,16 @@
 			(type default)
 		)
 		(uuid "b17bbd4f-faeb-460a-843f-8f9fb78e3cfe")
+	)
+	(wire
+		(pts
+			(xy 52.07 66.04) (xy 50.8 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2eead29-bd62-4040-9342-598b9115aeef")
 	)
 	(wire
 		(pts
@@ -4939,6 +5136,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 173.99) (xy 76.2 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9de2a6b-63cc-43e4-9759-af40f917fe91")
+	)
+	(wire
+		(pts
 			(xy 114.3 182.88) (xy 148.59 182.88)
 		)
 		(stroke
@@ -4959,7 +5166,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 186.69) (xy 163.83 186.69)
+			(xy 81.28 185.42) (xy 163.83 185.42)
 		)
 		(stroke
 			(width 0)
@@ -4989,6 +5196,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.875 66.04) (xy 138.43 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0051a5f-dd97-47a0-90ae-30661a2fd491")
+	)
+	(wire
+		(pts
 			(xy 26.67 140.97) (xy 71.12 140.97)
 		)
 		(stroke
@@ -5006,16 +5223,6 @@
 			(type default)
 		)
 		(uuid "c4bd4294-23b1-4c4a-8263-d2f3136c481d")
-	)
-	(wire
-		(pts
-			(xy 68.58 172.72) (xy 68.58 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5457ee6-f9df-4514-900c-de11620a8a22")
 	)
 	(wire
 		(pts
@@ -5149,17 +5356,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 110.49) (xy 50.8 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e08fd005-e8c9-4c9e-a16a-a6711c7c8568")
-	)
-	(wire
-		(pts
-			(xy 182.88 67.31) (xy 243.84 67.31)
+			(xy 181.61 67.31) (xy 243.84 67.31)
 		)
 		(stroke
 			(width 0)
@@ -5259,7 +5456,17 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 114.3) (xy 163.83 114.3)
+			(xy 165.735 58.42) (xy 173.99 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f699ab84-679b-4c51-bfb0-2153c5bc88f2")
+	)
+	(wire
+		(pts
+			(xy 163.83 114.3) (xy 205.74 114.3)
 		)
 		(stroke
 			(width 0)
@@ -5269,7 +5476,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 115.57) (xy 53.34 118.11)
+			(xy 53.34 113.03) (xy 53.34 118.11)
 		)
 		(stroke
 			(width 0)
@@ -5309,6 +5516,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 173.99) (xy 72.39 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe54e095-8315-4ef3-bcbe-bc648aa1d205")
+	)
+	(wire
+		(pts
 			(xy 146.05 144.78) (xy 185.42 144.78)
 		)
 		(stroke
@@ -5326,27 +5543,6 @@
 			(justify left bottom)
 		)
 		(uuid "06425f26-b054-4cd6-9575-c902dc5cb540")
-	)
-	(label "3.5mm sound card input jack"
-		(at 15.24 102.87 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "0732abb6-239d-411b-b93d-36ffbe9d9530")
-	)
-	(label "VOLUME_OUT_R"
-		(at 166.37 185.42 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "22d8d985-dbb2-447d-8d5e-282a372b2c96")
 	)
 	(label "MONO_MIX_POINT"
 		(at 189.23 99.06 0)
@@ -5388,27 +5584,6 @@
 		)
 		(uuid "301515c4-5089-46fe-b12c-ab17a88ea2ad")
 	)
-	(label "Internal speaker output connector"
-		(at 247.65 57.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3ada9a2b-17c8-4b54-93d8-2c024bb269ff")
-	)
-	(label "Enable amplifier jumper"
-		(at 24.13 40.64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "43ca72c6-611f-43a2-a7d9-2cb310a2384b")
-	)
 	(label "+5V_IN"
 		(at 52.07 25.4 0)
 		(effects
@@ -5418,17 +5593,6 @@
 			(justify left bottom)
 		)
 		(uuid "443e7155-0b91-45f6-96f4-2319a0a61bc2")
-	)
-	(label "Motherboard speaker input connector"
-		(at 12.7 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "4c1ad156-b376-49f5-bc38-992ecfa28aee")
 	)
 	(label "INPUT_AUDIO_L"
 		(at 119.38 130.81 90)
@@ -5450,17 +5614,6 @@
 		)
 		(uuid "55c28bda-e9b7-470e-a3f0-0814b845c735")
 	)
-	(label "Mode Selection, Power & Audio Routing"
-		(at 121.92 135.89 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "5b2ad220-2035-4900-976d-01c790b7334e")
-	)
 	(label "AMP_INPUT_R"
 		(at 175.26 83.82 0)
 		(effects
@@ -5481,27 +5634,6 @@
 		)
 		(uuid "657d2863-3431-44c7-8f7f-3673c7ec49db")
 	)
-	(label "3.5mm line out jack"
-		(at 246.38 120.65 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "6bc49da9-ffcf-4956-8b2a-0f1d993cd2cb")
-	)
-	(label "Attenuation"
-		(at 184.15 156.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6cd1a807-8e4b-4988-9eaa-4b59e9d3cb0c")
-	)
 	(label "SWITCHED_V_IN"
 		(at 67.31 60.96 90)
 		(effects
@@ -5512,27 +5644,6 @@
 		)
 		(uuid "7c864780-29ab-4df8-8ba0-1632df94b9e6")
 	)
-	(label "Line-Out Conditioning"
-		(at 191.77 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "81850dc5-af69-4b8b-8bcb-4fc6e2772675")
-	)
-	(label "Shunt"
-		(at 207.01 156.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "82729fee-790c-45ea-a130-8a46b5e2387b")
-	)
 	(label "AMP_INPUT_L"
 		(at 175.26 86.36 0)
 		(effects
@@ -5542,17 +5653,6 @@
 			(justify left bottom)
 		)
 		(uuid "91ae9513-4f01-4e13-943f-66d03bcfa2d4")
-	)
-	(label "+5V Power/Ground connector"
-		(at 17.78 22.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "92388fe3-c680-4036-9681-13fdbd7330f9")
 	)
 	(label "INPUT_AUDIO_R"
 		(at 114.3 130.81 90)
@@ -5574,38 +5674,6 @@
 		)
 		(uuid "99b60d6f-29cc-44b1-b1a2-9b2a1f8e74dc")
 	)
-	(label "10KΩ Switched, Dual-Gang Logarithmic Potentiometer"
-		(at 67.31 176.53 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify right top)
-		)
-		(uuid "9f4a3da0-1873-4795-abd5-be62d852b4b8")
-	)
-	(label "Motherboard Audio Conditioning"
-		(at 91.44 54.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "a04d1e41-b96c-4c81-b87b-b3bf6b36bb55")
-	)
-	(label "Filter"
-		(at 109.22 68.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a19ede4b-393a-405a-b6ad-c73832b8afac")
-	)
 	(label "JACK_L"
 		(at 57.15 115.57 0)
 		(effects
@@ -5617,7 +5685,7 @@
 		(uuid "a6373147-0799-47c2-953c-ccc7e11ac9dc")
 	)
 	(label "AUDIO_MB_AC"
-		(at 121.92 81.28 90)
+		(at 119.38 81.28 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5636,38 +5704,6 @@
 		)
 		(uuid "ab0733cc-cfa5-424c-b447-dc6b55be472b")
 	)
-	(label "Enable speaker input jumper"
-		(at 19.05 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "af7f4625-5379-4b11-a8a0-59e1c16fbfee")
-	)
-	(label "Mono Mix Generation"
-		(at 193.04 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "b0d5320c-8566-42b8-a6be-7f8c20e97163")
-	)
-	(label "Headphone protect"
-		(at 191.77 33.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bec8df30-9b51-45de-a0e6-5164fbe7652b")
-	)
 	(label "VOLUME_IN_R"
 		(at 88.9 151.13 0)
 		(effects
@@ -5679,56 +5715,14 @@
 		(uuid "c1067990-223e-47c7-9910-09fe952ee3db")
 	)
 	(label "LINE_OUT_SOURCE_R"
-		(at 139.7 144.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d0ab5c92-c648-4953-a49a-44124df1bc2d")
-	)
-	(label "Flyback Diode"
-		(at 104.14 167.64 180)
+		(at 158.75 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "d1e31a97-ba4b-4fbb-b8cf-30bad0e1bca0")
-	)
-	(label "DC block"
-		(at 100.33 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d51b56d5-5f48-4b45-a5b1-63f077b46f35")
-	)
-	(label "Input Mixer"
-		(at 101.6 92.71 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "db401a47-f5a3-476c-80fd-a486dea0000a")
-	)
-	(label "3.5mm headphone jack"
-		(at 217.17 17.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "dea61e81-e593-412d-bf9d-7f07cd32887a")
+		(uuid "d0ab5c92-c648-4953-a49a-44124df1bc2d")
 	)
 	(label "LINE_OUT_SOURCE_L"
 		(at 138.43 140.97 0)
@@ -5750,29 +5744,8 @@
 		)
 		(uuid "e398077f-0341-4cf5-84a0-9b6222db94c2")
 	)
-	(label "Amplified Output Routing"
-		(at 176.53 17.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 0 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5408018-170b-485a-a246-1e9000647267")
-	)
-	(label "GND_IN"
-		(at 52.07 27.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5eddc96-14c0-49de-9b98-d614948d31df")
-	)
 	(label "VOLUME_OUT_L"
-		(at 90.17 186.69 0)
+		(at 90.17 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5780,16 +5753,6 @@
 			(justify left bottom)
 		)
 		(uuid "f3bbc904-b553-4312-923e-255269571fab")
-	)
-	(label "VOLUME_OUT_L"
-		(at 163.83 184.15 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fd143de3-f06e-4c41-bf9d-1ce0918adc34")
 	)
 	(symbol
 		(lib_id "Device:R_US")
@@ -6403,7 +6366,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "D_Small"
+		(property "Value" "1N4148"
 			(at 104.902 160.274 90)
 			(effects
 				(font
@@ -6474,7 +6437,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 52.07 27.94 0)
+		(at 52.07 29.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6483,7 +6446,7 @@
 		(fields_autoplaced yes)
 		(uuid "41653676-88f0-413e-9c85-25bf8a6b6d0e")
 		(property "Reference" "#PWR01"
-			(at 52.07 34.29 0)
+			(at 52.07 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6492,7 +6455,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 52.07 33.02 0)
+			(at 52.07 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6500,7 +6463,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 27.94 0)
+			(at 52.07 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6509,7 +6472,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 27.94 0)
+			(at 52.07 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6518,7 +6481,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 52.07 27.94 0)
+			(at 52.07 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8167,22 +8130,22 @@
 			)
 		)
 		(pin "6"
-			(uuid "6db857c1-5849-4298-bc8e-1788dbc509f3")
+			(uuid "6db857c1-5849-4298-bc8e-1788dbc509f4")
 		)
 		(pin "3"
-			(uuid "3c9329b0-5d26-46d0-b58f-326ab395f029")
+			(uuid "3c9329b0-5d26-46d0-b58f-326ab395f02a")
 		)
 		(pin "4"
-			(uuid "5fcbc71b-76f0-4365-913c-26c688185efe")
+			(uuid "5fcbc71b-76f0-4365-913c-26c688185eff")
 		)
 		(pin "5"
-			(uuid "b20ec5ea-e005-490f-a8ba-4896218a540a")
+			(uuid "b20ec5ea-e005-490f-a8ba-4896218a540b")
 		)
 		(pin "2"
-			(uuid "32e6307e-9538-4049-a440-2332caec19d1")
+			(uuid "32e6307e-9538-4049-a440-2332caec19d2")
 		)
 		(pin "1"
-			(uuid "344965d3-8614-42e8-b4b7-aaa875e7cbc8")
+			(uuid "344965d3-8614-42e8-b4b7-aaa875e7cbc9")
 		)
 		(instances
 			(project ""
@@ -8721,7 +8684,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 45.72 123.19 0)
+		(at 45.72 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8730,7 +8693,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea548be2-7de2-4b7a-a372-cf742266aece")
 		(property "Reference" "#PWR03"
-			(at 45.72 129.54 0)
+			(at 45.72 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8739,7 +8702,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 45.72 128.27 0)
+			(at 45.72 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8747,7 +8710,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 45.72 123.19 0)
+			(at 45.72 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8756,7 +8719,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 123.19 0)
+			(at 45.72 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8765,7 +8728,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 45.72 123.19 0)
+			(at 45.72 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8853,7 +8816,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.8 66.04 0)
+		(at 52.07 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8862,7 +8825,7 @@
 		(fields_autoplaced yes)
 		(uuid "ec210665-4112-45f2-a628-b0017b46f6cf")
 		(property "Reference" "#PWR02"
-			(at 50.8 72.39 0)
+			(at 52.07 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8871,7 +8834,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 71.12 0)
+			(at 52.07 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8879,7 +8842,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 66.04 0)
+			(at 52.07 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8888,7 +8851,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 66.04 0)
+			(at 52.07 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8897,7 +8860,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.8 66.04 0)
+			(at 52.07 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8912,6 +8875,72 @@
 			(project ""
 				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 72.39 175.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f50cb995-2c45-4a74-bede-8cf55b02fd43")
+		(property "Reference" "#PWR05"
+			(at 72.39 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 72.39 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 72.39 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 72.39 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 72.39 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "996576c0-fe74-4b49-bef4-ff08bab99ed3")
+		)
+		(instances
+			(project ""
+				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
