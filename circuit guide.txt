@@ -1,4 +1,4 @@
-Revision 4 Circuit Design (with Input Mixing and Volume Switch controlling power to Amplifier)
+Revision 4 Circuit Design (with input mixing and switched volume knob controlling amplifier power)
 
 Note: required libraries for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib
@@ -9,8 +9,8 @@ Note: required libraries for KiCad (add manually, project specific):
 Component List (Reference Designators)
 
 * U1 / U_AMP: PAM8403 Module (Amplifier IC)
-* R1,2 / R_VOL_L, R_VOL_R, SW_R_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
-* SW2A,B / SW_HP_OVERRIDEA, SW_HP_OVERRIDEB: DPDT symbol representing rotary or slider switch
+* R1 / R_VOL | R_VOL_L, R_VOL_R, SW_R_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
+* SW2A,B / SW_HP_OVERRIDEA, SW_HP_OVERRIDEB: DPDT symbol representing rotary or slider switch (Headphone Override)
 * K1 / RL_AUDIO_RELAY: Relay_DPDT symbol (Mode Relay Routing Audio to Amplifier or Line-Out)
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
@@ -88,30 +88,35 @@ Block 4: Line-Out / Amp Mode Selection (Volume Knob Switch) & Volume Control
     * Pole A (Left Channel):
         * Common pin: Connect to INPUT_AUDIO_L.
         * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_L.
-        * Normally Open (NO) pin: Connect to VOLUME_IN_L.
+        * Normally Open (NO) pin: Connect to VOLUME_SOURCE_L.
     * Pole B (Right Channel):
         * Common pin: Connect to INPUT_AUDIO_R.
         * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_R.
-        * Normally Open (NO) pin: Connect to VOLUME_IN_R.
-* R_VOL (Dual-Gang Potentiometer):
-    * The VOLUME_IN_L/R nets connect to the inputs of the two potentiometer gangs.
-    * The wipers provide the VOLUME_OUT_L and VOLUME_OUT_R nets.
+        * Normally Open (NO) pin: Connect to VOLUME_SOURCE_R.
+* R_VOL_L (Left Gang on R_VOL):
+    * Pin 1 (End of Track): Connects to VOLUME_SOURCE_L.
+    * Pin 2 (Wiper): Provides the VOLUME_ADJUSTED_L net.
+    * Pin 3 (Other End of Track): Connects to GND.
+* R_VOL_R (Right Gang on R_VOL):
+    * Pin 4 (End of Track): Connects to VOLUME_SOURCE_R.
+    * Pin 5 (Wiper): Provides the VOLUME_ADJUSTED_R net.
+    * Pin 6 (Other End of Track): Connects to GND.
 * Effect:
     * When SW_R_VOL is OFF:
         * The AMP_CONTROL_SIGNAL net and U_AMP are disconnected from SWITCHED_V_IN.
         * Audio is routed to LINE_OUT_SOURCE_L/R.
     * When SW_R_VOL is ON:
         * The AMP_CONTROL_SIGNAL net and U_AMP are connected to SWITCHED_V_IN.
-        * Audio is routed to VOLUME_IN_L/R for amplification.
+        * Audio is routed to VOLUME_SOURCE_L/R for amplification.
 
 Block 5: Mono Mix Generation & Amplifier Input (Two-Jumper Version)
-* Mono Mix Generation: A MONO_MIX_POINT net is created by mixing VOLUME_OUT_L and VOLUME_OUT_R through R_MONO_MIX_L and R_MONO_MIX_R.
+* Mono Mix Generation: A MONO_MIX_POINT net is created by mixing VOLUME_ADJUSTED_L and VOLUME_ADJUSTED_R through R_MONO_MIX_L and R_MONO_MIX_R.
 * JP_EN_RSPKR_OUTL (Left Channel Jumper):
-    * Pin 1 (Stereo): Connect to VOLUME_OUT_L.
+    * Pin 1 (Stereo): Connect to VOLUME_ADJUSTED_L.
     * Pin 2 (Common): Connect to AMP_INPUT_L.
     * Pin 3 (Mono): Connect to MONO_MIX_POINT.
 * JP_EN_RSPKR_OUTR (Right Channel Jumper):
-    * Pin 1 (Stereo): Connect to VOLUME_OUT_R.
+    * Pin 1 (Stereo): Connect to VOLUME_ADJUSTED_R.
     * Pin 2 (Common): Connect to AMP_INPUT_R.
     * Pin 3 (Mono): Connect to GND.
 
@@ -124,7 +129,7 @@ Block 6: Applifier IC
     * L- and R- output pins: Connect to the L- and R- pins of J_SPKR_OUT.
 
 Block 7: Amplified Output Routing
-* SW_HP_OVERRIDEA & SW_HP_OVERRIDEB (Headphone override):
+* SW_HP_OVERRIDEA & SW_HP_OVERRIDEB (Headphone Override):
     * Common pins: Connect to the L+ and R+ outputs of U_AMP.
     * Throw 1 ("Auto"): Connect to the input of the headphone protection resistors (R_HP_PROT_L/R_HP_PROT_R).
     * Throw 2 ("Forced Speaker"): Connect directly to the L+ and R+ pins of J_SPKR_OUT.
