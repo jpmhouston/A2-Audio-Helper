@@ -59,6 +59,8 @@ Component List (Reference Designators)
   footprint Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
 * J14: Conn_02x06 symbol (Ribbon cable connector to remote J_HP1_OUT + R_VOL)
   footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
+  https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
+  https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
   2" cable https://www.snapeda.com/parts/TCMD-06-D-02.00-01/Samtec/view-part/
 
 * D1 / D_RELAY_FLYBACK: 1N4148 Diode (Flyback Diode for Mode Relay)
