@@ -1,10 +1,11 @@
-Revision 6 Circuit Design (removed jumper JP_ENBL_SPKR_IN, added first draft pcb layout)
+Revision 7 Circuit Design (split speaker out jumpers, changed connectors, completely changed pcb)
 
 Libraries for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib
 * https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (not a repo, download Symbol & Footprint files)
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (")
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (")
+* https://www.molex.com/en-us/products/part-detail/22035025 (footprint & STEP 3d model to "Molex 5267 22035025" dir)
 
 --
 
@@ -25,13 +26,13 @@ Component List (Reference Designators)
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
   like J3 / J_SPKR_IN but want something unique so can't be plugged into speaker
-  footprint Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical (for now)
+  footprint CONN_22035025_MOL
 * J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to enable +5V power to U_AMP)
   footprint PinHeader_1x02_P2.54mm_Vertical
 * J3 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
-  like this maybe https://leeselectronic.com/en/product/2108-2-way-254mm-plug-male-5pcs.html
-  or this but no longer want right angle https://www.snapeda.com/parts/22057028/Molex/view-part/
-  footprint PinHeader_1x02_P2.54mm_Vertical (though maybe change to the downloaded footprint from snapeda.com)
+  https://www.snapeda.com/parts/22272021/Molex/view-part/
+  https://www.molex.com/en-us/products/part-detail/22272021
+  footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
 * J4 / J_SCARD_IN: AudioJack3_Ground_Switch symbol (Switching Sound Card Input Jack)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
@@ -42,17 +43,19 @@ Component List (Reference Designators)
   switched jack same as J5 / J_SCARD_IN for now
   footprint SJ1-3515N
 * J8 / J_HP2_OUT: Conn_01x05 symbol (Switching Headphone 2 Jack Connector)
-  www.snapeda.com/parts/3-641127-5/TE%20Connectivity%20%2F%20AMP/view-part/
-  footprint PinHeader_1x05_P2.54mm_Horizontal (though maybe change to the downloaded footprint from snapeda.com)
-* J9 / J_SPKR_OUT: Conn_01x04 symbol (Speaker Output)
-  want this, but right angle https://leeselectronic.com/en/product/2112-4-way-254mm-plug-male-4pcs.html
-  https://www.snapeda.com/parts/22053041/Molex/view
-  footprint PinHeader_1x04_P2.54mm_Horizontal (though maybe change to the downloaded footprint from snapeda.com)
-* J10,11 / JP_EN_RSPKR_L, JP_EN_RSPKR_R: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
+  https://www.snapeda.com/parts/22272051/Molex/view-part/
+  https://www.molex.com/en-us/products/part-detail/22272051
+  footprint Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical
+* J9,10 / J_SPKR_OUT: Conn_01x02 symbol (Speaker Output)
+  https://www.snapeda.com/parts/22272021/Molex/view-part/
+  https://www.molex.com/en-us/products/part-detail/22272021
+  footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
+* J11,12 / JP_EN_RSPKR_L, JP_EN_RSPKR_R: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
   footprint PinHeader_1x03_P2.54mm_Vertical
-* J12 / J_LINE_OUT: Conn_01x05 symbol (Line-Out Jack Connector)
-  www.snapeda.com/parts/3-641127-3/TE%20Connectivity%20%2F%20AMP/view-part/
-  footprint PinHeader_1x03_P2.54mm_Horizontal (maybe change to the downloaded footprint from snapeda.com)
+* J13 / J_LINE_OUT: Conn_01x03 symbol (Line-Out Jack Connector)
+  https://www.snapeda.com/parts/22272031/Molex/view-part/
+  https://www.molex.com/en-us/products/part-detail/22272031
+  footprint Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
 
 * D1 / D_RELAY_FLYBACK: 1N4148 Diode (Flyback Diode for Mode Relay)
   https://leeselectronic.com/en/product/7113-7113DIODEFASTSWITCHING1N41484PCS.html 
