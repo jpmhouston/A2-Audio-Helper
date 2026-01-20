@@ -1,4 +1,4 @@
-Revision 7 Circuit Design (split speaker out jumpers, changed connectors, completely changed pcb)
+Revision 7 Circuit Design (split speaker outs, ribbon cable to remote vol & headphone, new connectors, new pcb)
 
 Libraries for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib
@@ -6,6 +6,7 @@ Libraries for KiCad (add manually, project specific):
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (")
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (")
 * https://www.molex.com/en-us/products/part-detail/22035025 (footprint & STEP 3d model to "Molex 5267 22035025" dir)
+
 
 --
 
@@ -17,7 +18,7 @@ Component List (Reference Designators)
   (model files from the similar 5KΩ part www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/)
   footprint PTR902-1020K-A502
 * SW2A,B / SW_HP_OVERRIDEA, SW_HP_OVERRIDEB: DPDT symbol representing rotary or slider switch (Headphone Override)
-  https://www.snapeda.com/parts/JS202011AQN/C%26K/view-part/
+  https://www.snapeda.com/parts/JS202011CQN/C%26K/view-part/
   SW_CK_JS202011CQN_DPDT_Straight
 * K1 / RL_AUDIO_RELAY: Relay_DPDT symbol (Mode Relay Routing Audio to Amplifier or Line-Out)
   https://leeselectronic.com/en/product/3219-relayhkehrs2-5vdc-coildpdt1a.html
@@ -26,7 +27,7 @@ Component List (Reference Designators)
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
   like J3 / J_SPKR_IN but want something unique so can't be plugged into speaker
-  footprint CONN_22035025_MOL
+  footprint Molex5267:CONN_22035025_MOL
 * J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to enable +5V power to U_AMP)
   footprint PinHeader_1x02_P2.54mm_Vertical
 * J3 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
@@ -36,12 +37,12 @@ Component List (Reference Designators)
 * J4 / J_SCARD_IN: AudioJack3_Ground_Switch symbol (Switching Sound Card Input Jack)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
-  footprint SJ1-3515N
+  footprint SJ1-3515N:CUI_SJ1-3515N
 * J5,6 / JP_EN_HP1_L, JP_EN_HP1_R: Two Conn_01x03 symbols (Jumpers to enable Headphone 2)
   footprint PinHeader_1x03_P2.54mm_Vertical
 * J7 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
   switched jack same as J5 / J_SCARD_IN for now
-  footprint SJ1-3515N
+  footprint SJ1-3515N:CUI_SJ1-3515N
 * J8 / J_HP2_OUT: Conn_01x05 symbol (Switching Headphone 2 Jack Connector)
   https://www.snapeda.com/parts/22272051/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272051
@@ -56,6 +57,9 @@ Component List (Reference Designators)
   https://www.snapeda.com/parts/22272031/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272031
   footprint Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
+* J14: Conn_02x06 symbol (Ribbon cable connector to remote J_HP1_OUT + R_VOL)
+  footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
+  2" cable https://www.snapeda.com/parts/TCMD-06-D-02.00-01/Samtec/view-part/
 
 * D1 / D_RELAY_FLYBACK: 1N4148 Diode (Flyback Diode for Mode Relay)
   https://leeselectronic.com/en/product/7113-7113DIODEFASTSWITCHING1N41484PCS.html 
