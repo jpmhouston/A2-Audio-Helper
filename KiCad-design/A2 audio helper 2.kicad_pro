@@ -621,6 +621,10 @@
     [
       "5bdcff91-125f-4cf8-8ef8-6f244f2a71f5",
       "Root"
+    ],
+    [
+      "03fd1e11-28b7-476a-9b76-001ec1c19924",
+      "Daughterboard"
     ]
   ],
   "text_variables": {}

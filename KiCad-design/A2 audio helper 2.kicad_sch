@@ -6,13 +6,13 @@
 	(paper "A4")
 	(title_block
 		(title "Apple 2 Audio Helper")
-		(date "2026-01-17")
-		(rev "0.7.1")
+		(date "2026-01-24")
+		(rev "0.8")
 		(company "Northwest Retroventures")
 		(comment 1 "Optionally supports second internal speaker for stereo.")
-		(comment 2 "Outputs to line-out jack & headphone jack (rear of case), stock speaker.")
+		(comment 2 "Outputs to line-out jack & headphone jack 2 (rear of case), jack 1 (front), stock speaker.")
 		(comment 3 "Routes sound card and motherboard audio sources. Power from int. game port connector.")
-		(comment 4 "Circuit to mount internal to Apple 2 beneath keyboard, exposing mode & volume knobs.")
+		(comment 4 "Circuit to mount in Apple 2 case beneath keyboard, exposing headph. jack & volume knob.")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x02"
@@ -4243,7 +4243,7 @@
 	)
 	(text "Ribbon cable connector to\nheadphone 1 jack and volume knob\nalternately on angled daughterboard"
 		(exclude_from_sim no)
-		(at 14.732 21.59 0)
+		(at 14.732 18.288 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4643,12 +4643,6 @@
 		(uuid "2be09948-e5fc-4320-971e-6985fae9574b")
 	)
 	(junction
-		(at 63.5 171.45)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2c86b7e2-ab62-4fd1-98bd-123029e9ac5a")
-	)
-	(junction
 		(at 83.82 191.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4805,8 +4799,8 @@
 		(uuid "fce2a36e-d51f-4174-8257-f7ca76b2752b")
 	)
 	(no_connect
-		(at 73.66 33.02)
-		(uuid "2494cbc5-7324-4460-9825-03e4842addc4")
+		(at 53.34 29.21)
+		(uuid "a22f3737-37c9-43a8-b18f-b42649047012")
 	)
 	(no_connect
 		(at 137.16 73.66)
@@ -5111,6 +5105,16 @@
 			(type default)
 		)
 		(uuid "1c5846ef-75f0-47d8-85e8-d7689a035ff6")
+	)
+	(wire
+		(pts
+			(xy 48.26 36.83) (xy 43.18 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e4f685f-4ab1-46fb-97e4-4e0434cfee22")
 	)
 	(wire
 		(pts
@@ -5584,6 +5588,16 @@
 	)
 	(wire
 		(pts
+			(xy 48.26 29.21) (xy 48.26 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5aff11b2-5e9b-41c7-ab4c-66d2d9862de4")
+	)
+	(wire
+		(pts
 			(xy 90.17 66.04) (xy 90.17 74.93)
 		)
 		(stroke
@@ -6051,16 +6065,6 @@
 			(type default)
 		)
 		(uuid "977ec275-d88d-46ec-a52e-bdf6ba47de3e")
-	)
-	(wire
-		(pts
-			(xy 63.5 171.45) (xy 63.5 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97acb45c-05b0-433f-83e5-fa55b65beb75")
 	)
 	(wire
 		(pts
@@ -7124,7 +7128,7 @@
 	)
 	(global_label "SRC_R"
 		(shape input)
-		(at 50.8 33.02 270)
+		(at 66.04 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7134,29 +7138,7 @@
 		)
 		(uuid "11fb0f2d-321b-413f-bb7a-ee3d7a6e2fbb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 41.9923 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "RMT_GND"
-		(shape input)
-		(at 60.96 33.02 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "143c1d24-5f3c-4860-995c-decb17275667")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 44.5323 90)
+			(at 66.04 38.1823 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7168,7 +7150,7 @@
 	)
 	(global_label "V_IN"
 		(shape input)
-		(at 45.72 33.02 270)
+		(at 45.72 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7178,7 +7160,7 @@
 		)
 		(uuid "3d8ab0e2-9cda-45ed-8eb4-36822f32a34a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 45.72 39.9967 90)
+			(at 45.72 36.1867 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7256,7 +7238,7 @@
 	)
 	(global_label "HP1_RN"
 		(shape input)
-		(at 71.12 33.02 270)
+		(at 63.5 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7266,7 +7248,7 @@
 		)
 		(uuid "5cfa0f57-6a8a-4331-9295-b18556bf0bb4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 71.12 43.3833 90)
+			(at 63.5 39.5733 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7278,7 +7260,7 @@
 	)
 	(global_label "VOL_R"
 		(shape input)
-		(at 55.88 33.02 270)
+		(at 68.58 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7288,29 +7270,7 @@
 		)
 		(uuid "5ec30675-fb61-4bbc-8104-39a78ba519ba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 55.88 41.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "RMT_GND"
-		(shape input)
-		(at 63.5 179.07 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "60e80787-7fda-479c-b1ae-6790bcbb9cf5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 190.5823 90)
+			(at 68.58 37.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7322,7 +7282,7 @@
 	)
 	(global_label "HP1_TN"
 		(shape input)
-		(at 66.04 33.02 270)
+		(at 58.42 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7332,7 +7292,7 @@
 		)
 		(uuid "6b5c4757-5deb-4446-b0e5-c3d11e818d40")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 66.04 43.0809 90)
+			(at 58.42 39.2709 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7388,7 +7348,7 @@
 	)
 	(global_label "V_OUT"
 		(shape input)
-		(at 58.42 33.02 270)
+		(at 50.8 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7398,7 +7358,7 @@
 		)
 		(uuid "90846e85-444f-438b-abd3-90f20efaaf46")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 58.42 41.69 90)
+			(at 50.8 37.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7410,7 +7370,7 @@
 	)
 	(global_label "HP1_T"
 		(shape input)
-		(at 63.5 33.02 270)
+		(at 55.88 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7420,7 +7380,7 @@
 		)
 		(uuid "95e4e029-19b5-48e3-905a-fd84b987b45a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 41.7504 90)
+			(at 55.88 37.9404 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7498,7 +7458,7 @@
 	)
 	(global_label "VOL_L"
 		(shape input)
-		(at 53.34 33.02 270)
+		(at 73.66 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7508,7 +7468,7 @@
 		)
 		(uuid "d0a630df-5509-4043-bdcb-4551abf85a75")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.34 41.4481 90)
+			(at 73.66 37.6381 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7542,7 +7502,7 @@
 	)
 	(global_label "HP1_R"
 		(shape input)
-		(at 68.58 33.02 270)
+		(at 60.96 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7552,7 +7512,7 @@
 		)
 		(uuid "d62ab7c9-b3ee-447c-879b-f53513cf4e72")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.58 42.0528 90)
+			(at 60.96 38.2428 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7586,7 +7546,7 @@
 	)
 	(global_label "SRC_L"
 		(shape input)
-		(at 48.26 33.02 270)
+		(at 71.12 29.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7596,7 +7556,7 @@
 		)
 		(uuid "d830e19f-f32b-4237-81cd-5ce0402eff11")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 48.26 41.7504 90)
+			(at 71.12 37.9404 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7741,7 +7701,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 58.42 27.94 90)
+		(at 58.42 24.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7749,7 +7709,7 @@
 		(dnp no)
 		(uuid "2536afd1-7842-404a-a0dc-fa649b1e7156")
 		(property "Reference" "J14"
-			(at 42.672 27.178 90)
+			(at 42.672 23.368 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7758,7 +7718,7 @@
 			)
 		)
 		(property "Value" "PIN HEADER 2x6"
-			(at 42.672 29.718 90)
+			(at 42.672 25.908 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7767,7 +7727,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical"
-			(at 58.42 27.94 0)
+			(at 58.42 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7776,7 +7736,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 58.42 27.94 0)
+			(at 58.42 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7785,7 +7745,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 58.42 27.94 0)
+			(at 58.42 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8505,6 +8465,73 @@
 			(project ""
 				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 43.18 36.83 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4a242535-5a24-4f84-bfbf-525074ff767a")
+		(property "Reference" "#PWR016"
+			(at 36.83 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 36.8299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 43.18 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0e0eaa15-be2f-4a38-b6e5-f8fb38d8f60d")
+		)
+		(instances
+			(project ""
+				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -11653,6 +11680,48 @@
 				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
 					(reference "J12")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 17.78 38.1)
+		(size 13.97 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "03fd1e11-28b7-476a-9b76-001ec1c19924")
+		(property "Sheetname" "Daughterboard"
+			(at 17.78 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "A2 audio helper 2 daughterboard.kicad_sch"
+			(at 17.78 42.4946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "A2 audio helper 2"
+				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5"
+					(page "2")
 				)
 			)
 		)

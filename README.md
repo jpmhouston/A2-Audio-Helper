@@ -16,4 +16,6 @@ Next I’ll implementing this schematic on a breadboard and. If testing going we
 
 ![schematic](schematic.png)
 
+![schematic](schematic%202.png)
+
 ![schematic](render.jpg)
