@@ -38,26 +38,27 @@ Component List (Reference Designators)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
   footprint SJ1-3515N:CUI_SJ1-3515N
-* J5,6,7,8,0,10 / JP_EN_HP1_L, JP_EN_HP1_R: Six Conn_01x03 symbols (Jumpers to enable Headphone 2)
+* J5,6 / JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R: Two Conn_01x03 symbols (Jumpers to Control Which Headphone Jack Mutes Speakers)
   footprint PinHeader_1x03_P2.54mm_Vertical
-* J11 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
+* J7 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
   switched jack same as J5 / J_SCARD_IN for now
   footprint SJ1-3515N:CUI_SJ1-3515N
-* J12 / J_HP2_OUT: Conn_01x05 symbol (Switching Headphone 2 Jack Connector)
+* J8 / J_HP2_OUT: Conn_01x05 symbol (Switching Headphone 2 Jack Connector)
+  pins are numbered like SJ1-3515N:CUI_SJ1-3515N are: GND, T, R, TN, RN
   https://www.snapeda.com/parts/22272051/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272051
   footprint Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical
-* J13,14 / J_SPKR_OUT: Conn_01x02 symbol (Speaker Output)
+* J9,10 / J_SPKR_OUT_L, J_SPKR_OUT_L: Conn_01x02 symbol (Speaker Output)
   https://www.snapeda.com/parts/22272021/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272021
   footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
-* J15,16 / JP_EN_RSPKR_L, JP_EN_RSPKR_R: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
+* J11,12 / JP_EN_RSPKR_L, JP_EN_RSPKR_R: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
   footprint PinHeader_1x03_P2.54mm_Vertical
-* J17 / J_LINE_OUT: Conn_01x03 symbol (Line-Out Jack Connector)
+* J13 / J_LINE_OUT: Conn_01x03 symbol (Line-Out Jack Connector)
   https://www.snapeda.com/parts/22272031/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272031
   footprint Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
-* J18,19: Two Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
+* J14,15: Two Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
   footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
   https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
   https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
@@ -177,31 +178,31 @@ Block 6: Amplifier Module
     * Ground pin: Connect to GND.
     * L and R input pins: Connect to AMP_INPUT_L and AMP_INPUT_R.
     * L+ and R+ output pins: Connect to the common pins of SW_HP_OVERRIDEA/B.
-    * L- and R- output pins: Connect to the L- and R- pins of J_SPKR_OUT.
+    * L- and R- output pins: Connect to pin 2 (L-) of J_SPKR_OUT_L and pin 2 (R-) of J_SPKR_OUT_R.
 
-Block 7: Amplified Output Routing (THIS IS NOW INACCURATE)
+Block 7: Amplified Output Routing
 * SW_HP_OVERRIDEA & SW_HP_OVERRIDEB (Headphone Override Switch):
     * The Common pin of SW_HP_OVERRIDEA: Connect to the L+ output of U_AMP.
     * The Common pin of SW_HP_OVERRIDEB: Connect to the R+ output of U_AMP.
-    * Throw 2 ("Forced Speaker") of SW_HP_OVERRIDEA: Connect directly to the L+ pin of J_SPKR_OUT.
-    * Throw 2 ("Forced Speaker") of SW_HP_OVERRIDEB: Connect directly to the R+ pin of J_SPKR_OUT.
+    * Throw 2 ("Forced Speaker") of SW_HP_OVERRIDEA: Connect directly to pin 1 (L+) of J_SPKR_OUT_L.
+    * Throw 2 ("Forced Speaker") of SW_HP_OVERRIDEB: Connect directly to pin 1 (R+) of J_SPKR_OUT_R.
     * Throw 1 ("Auto") of SW_HP_OVERRIDEA: Connect to the input of the R_HP_PROT_L resistor.
     * Throw 1 ("Auto") of SW_HP_OVERRIDEB: Connect to the input of the R_HP_PROT_R resistor.
 * Parallel Audio Path to Headphone Jacks:
-    * Output of R_HP_PROT_L: Connect in parallel to the T (Tip) pin of J_HP1_OUT and pin 1 of J_HP1_OUT.
-    * Output of R_HP_PROT_R: Connect in parallel to the T (Tip) pin of J_HP2_OUT and pin 2 of J_HP2_OUT.
-    * The S (Sleeve) pins of J_HP1_OUT, and pin 5 of J_HP2_OUT, connect to GND.
-* JP_EN_HP1_L & JP_EN_HP1_R (Bypass Jumpers for Mute Logic Selection):
-    * For JP_EN_HP1_L (Left Channel):
-        * Common pin: Connect to the L+ pin of J_SPKR_OUT.
-        * Throw 1 (Jumper position for "HP1 Present"): Connect to the TN (Tip Normal) pin of J_HP1_OUT.
-        * Throw 2 (Jumper position for "HP1 Absent"): Connect pin 3 of J_HP2_OUT.
-    * For JP_EN_HP1_R (Right Channel):
-        * Common pin: Connect to the R+ pin of J_SPKR_OUT.
-        * Throw 1 (Jumper position for "HP1 Present"): Connect to the RN (Ring Normal) pin of J_HP1_OUT.
-        * Throw 2 (Jumper position for "HP1 Absent"): Connect to pin 4 of J_HP2_OUT.
+    * Output of R_HP_PROT_L: Connect to the HP_L net, connecting in parallel the T (Tip) pin of the J_HP1_OUT jack and pin 2 of J_HP2_OUT (will connect to the T (Tip) pin of the eventual HP2 jack).
+    * Output of R_HP_PROT_R: Connect to the HP_R net, connecting in parallel the R (Ring) pin of the J_HP1_OUT jack and pin 3 of J_HP2_OUT (will connect to the R (Ring) pin of the eventual HP2 jack).
+    * The signal goes in parallel to the 2 headphones, but when the jumper headers JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R have pins 1&2 bridged, this will indicate headphone 2 is primary. When pins 2&3 bridged this will indicate headphone 1 is primary. Primary means the headphone that controls muting the speaker(s).
+* Headphone Routing:
+    * The TN (Tip Normal) pin of J_HP1_OUT: Connect to pin 3 of JP_SW_PRIM_HP_L.
+    * The RN (Ring Normal) pin of J_HP1_OUT: Connect to pin 3 of JP_SW_PRIM_HP_R.
+    * The S (Sleeve) pin of J_HP1_OUT: Connect to GND.
+    * Pin 4 of J_HP2_OUT (will connect to the TN (Tip Normal) of the HP2 jack): Connect to pin 1 of JP_SW_PRIM_HP_L.
+    * Pin 5 of J_HP2_OUT, representing the RN (Ring Normal) pin of the HP2 jack: Connect to pin 1 of JP_SW_PRIM_HP_R.
+    * Pin 1 of J_HP2_OUT (will connect to the S (Sleeve) pin of the eventual HP2 jack): Connect to GND.
+    * Pin 2 of JP_SW_PRIM_HP_L: Connect to pin 1 (L+) of J_SPKR_OUT_L.
+    * Pin 2 of JP_SW_PRIM_HP_R: Connect to pin 1 (R+) of J_SPKR_OUT_R.
 * J_SPKR_OUT (Speaker Output Header):
-    * L+/R+ pins: Fed by the Common pins of JP_EN_HP1_L/R, OR from the "Forced Speaker" throws of SW_HP_OVERRIDEA/B.
+    * L+/R+ pins: Fed by either pins 2 of JP_SW_PRIM_HP_L and JP_SW_PRIM_HP_R, OR from the "Forced Speaker" throws of SW_HP_OVERRIDEA/B.
     * L-/R- pins: Connect directly to the L-/R- outputs of U_AMP.
 
 Block 8: Line-Out Jack
