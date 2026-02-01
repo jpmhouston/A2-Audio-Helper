@@ -3,6 +3,7 @@ Revision 9 Circuit Design (fixed dual headphones out, kinda brute force like)
 Libraries for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib
 * https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (not a repo, download Symbol & Footprint files)
+* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (step model, into above dir)
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (")
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (")
 * https://www.molex.com/en-us/products/part-detail/22035025 (footprint & STEP 3d model to "Molex 5267 22035025" dir)
