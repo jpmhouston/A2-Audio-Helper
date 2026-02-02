@@ -1,23 +1,25 @@
-Revision 9 Circuit Design (fixed dual headphones out, kinda brute force like)
+Revision 9 Circuit Design (changing connection to rear of case to a single connector and cable)
 
 Libraries for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib
 * https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (not a repo, download Symbol & Footprint files)
-* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (step model, into above dir)
+* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (STEP 3d  model, into above dir)
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (")
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (")
 * https://www.molex.com/en-us/products/part-detail/22035025 (footprint & STEP 3d model to "Molex 5267 22035025" dir)
-
+* https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (just STEP 3d model)
 
 --
 
 Component List (Reference Designators)
 
+Main Board
+
 * U1 / U_AMP: PAM8403 Module (Amplifier Module)
 * R1 / R_VOL | R_VOL_L, R_VOL_R, SW_R_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
   https://www.snapeda.com/parts/PTR902-1015K-A103/Bourns/view-part/
-  (model files from the similar 5KΩ part www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/)
   footprint PTR902-1020K-A502
+  3d model PTR902-1020K-A502/ptr901-2x15k-xxxx.stp
 * SW2A,B / SW_HP_OVERRIDEA, SW_HP_OVERRIDEB: DPDT symbol representing rotary or slider switch (Headphone Override)
   https://www.snapeda.com/parts/JS202011CQN/C%26K/view-part/
   SW_CK_JS202011CQN_DPDT_Straight
@@ -29,6 +31,7 @@ Component List (Reference Designators)
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
   like J3 / J_SPKR_IN but want something unique so can't be plugged into speaker
   footprint Molex5267:CONN_22035025_MOL
+  3d model Molex5267 22035025/177308433-659-0022035025/0022035025.stp
 * J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to enable +5V power to U_AMP)
   footprint PinHeader_1x02_P2.54mm_Vertical
 * J3 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
@@ -39,27 +42,27 @@ Component List (Reference Designators)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
   footprint SJ1-3515N:CUI_SJ1-3515N
+  3d model SJ1-3515N/SJ1-3515N.step
 * J5,6 / JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R: Two Conn_01x03 symbols (Jumpers to Control Which Headphone Jack Mutes Speakers)
   footprint PinHeader_1x03_P2.54mm_Vertical
 * J7 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
-  switched jack same as J5 / J_SCARD_IN for now
+  switched jack same as J5 / J_SCARD_IN
   footprint SJ1-3515N:CUI_SJ1-3515N
-* J8 / J_HP2_OUT: Conn_01x05 symbol (Switching Headphone 2 Jack Connector)
-  pins are numbered like SJ1-3515N:CUI_SJ1-3515N are: GND, T, R, TN, RN
-  https://www.snapeda.com/parts/22272051/Molex/view-part/
-  https://www.molex.com/en-us/products/part-detail/22272051
-  footprint Connector_Molex:Molex_KK-254_AE-6410-05A_1x05_P2.54mm_Vertical
+  3d model SJ1-3515N/SJ1-3515N.step
+* J8 now unused, was separate connector to hp1 jack
 * J9,10 / J_SPKR_OUT_L, J_SPKR_OUT_L: Conn_01x02 symbol (Speaker Output)
   https://www.snapeda.com/parts/22272021/Molex/view-part/
   https://www.molex.com/en-us/products/part-detail/22272021
   footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
 * J11,12 / JP_EN_RSPKR_L, JP_EN_RSPKR_R: Two Conn_01x03 symbols (Jumpers for Mono/Stereo Speaker Mode)
   footprint PinHeader_1x03_P2.54mm_Vertical
-* J13 / J_LINE_OUT: Conn_01x03 symbol (Line-Out Jack Connector)
-  https://www.snapeda.com/parts/22272031/Molex/view-part/
-  https://www.molex.com/en-us/products/part-detail/22272031
-  footprint Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
-* J14,15: Two Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
+* J13 / J_REAR_CONN: Conn_01x07 symbol (Connector to Switching Headphone 2 Jack and Line-Out)
+  pins are numbered from 1 to 7: HP2_T, HP2_TN, HP2_R, HP2_RN, LINEOUT_L, LINEOUT_R, GND
+  JST PHD series, 2.0mm, B8B-PHDSS
+  https://www.snapeda.com/parts/B8B-PHDSS(LF)(SN)/JST%20Sales/view-part/
+  footprint Connector_JST:JST_PHD_B8B-PHDSS_2x04_P2.00mm_Vertical
+  3d model JST B8B-PHDSS/B8B-PHDSS -LF--SN---3DModel-STEP-56544.STEP
+* J14 / J_TORMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to remote J_RMT_HP1_OUT + R_RMT_VOL)
   footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
   https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
   https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
@@ -83,6 +86,32 @@ Component List (Reference Designators)
 * R11,12 / R_LINE_ATTEN_L, R_LINE_ATTEN_R: 4.7kΩ Resistors (Line-out Attenuation, Series)
 * R13,14 / R_SHUNT_L, R_SHUNT_R: 1kΩ Resistors (Line-out Attenuation, Shunt)
   footprint for all restistors R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+
+Daughterboard
+
+* J15 / J_RMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
+  footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
+  https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
+  https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
+  2" cable https://www.snapeda.com/parts/TCMD-06-D-02.00-01/Samtec/view-part/
+* J16 / J_RMT_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
+  switched jack same as J5 / J_SCARD_IN
+  footprint SJ1-3515N:CUI_SJ1-3515N
+  3d model SJ1-3515N/SJ1-3515N.step
+* R15 / R_RMT_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
+  https://www.snapeda.com/parts/PTR902-1015K-A103/Bourns/view-part/
+  (model files from the similar 5KΩ part www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/)
+  footprint PTR902-1020K-A502
+  3d model PTR902-1020K-A502/ptr901-2x15k-xxxx.stp
+
+Also
+
+* J17 / J_LINEOUT: Rear case jack, 3.5mm panel mount audiom, switching 5 pin
+  Cliff CL11064 - I think S variant, panel grounding X variant not needed (what is suffix A?)
+  https://www.cliffuk.co.uk/products/jacksockets/VERTICAL.pdf
+* J18 / J_HP2: Rear case jack, 3.5mm panel mount audiom, 3 pin
+  Cliff CL11061 - I think S variant, panel grounding X variant not needed
+  https://www.cliffuk.co.uk/products/jacksockets/VERTICAL.pdf
 
 ---
 
@@ -140,11 +169,11 @@ Block 4: Line-Out / Amp Mode Selection (Volume Knob Switch) & Volume Control
 * RL_AUDIO_RELAY (DPDT Relay) Audio Contact Connections:
     * Pole A (Left Channel):
         * Common pin: Connect to INPUT_AUDIO_L.
-        * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_L.
+        * Normally Closed (NC) pin: Connect to LINEOUT_SOURCE_L.
         * Normally Open (NO) pin: Connect to VOLUME_SOURCE_L.
     * Pole B (Right Channel):
         * Common pin: Connect to INPUT_AUDIO_R.
-        * Normally Closed (NC) pin: Connect to LINE_OUT_SOURCE_R.
+        * Normally Closed (NC) pin: Connect to LINEOUT_SOURCE_R.
         * Normally Open (NO) pin: Connect to VOLUME_SOURCE_R.
 * R_VOL_L (Left Gang on R_VOL):
     * Pin 1 (End of Track): Connects to VOLUME_SOURCE_L.
@@ -157,7 +186,7 @@ Block 4: Line-Out / Amp Mode Selection (Volume Knob Switch) & Volume Control
 * Effect:
     * When SW_R_VOL is OFF:
         * The AMP_CONTROL_SIGNAL net and U_AMP are disconnected from V_IN_ENABLED.
-        * Audio is routed to LINE_OUT_SOURCE_L/R.
+        * Audio is routed to LINEOUT_SOURCE_L/R.
     * When SW_R_VOL is ON:
         * The AMP_CONTROL_SIGNAL net and U_AMP are connected to V_IN_ENABLED.
         * Audio is routed to VOLUME_SOURCE_L/R for amplification.
@@ -190,16 +219,16 @@ Block 7: Amplified Output Routing
     * Throw 1 ("Auto") of SW_HP_OVERRIDEA: Connect to the input of the R_HP_PROT_L resistor.
     * Throw 1 ("Auto") of SW_HP_OVERRIDEB: Connect to the input of the R_HP_PROT_R resistor.
 * Parallel Audio Path to Headphone Jacks:
-    * Output of R_HP_PROT_L: Connect to the HP_L net, connecting in parallel the T (Tip) pin of the J_HP1_OUT jack and pin 2 of J_HP2_OUT (will connect to the T (Tip) pin of the eventual HP2 jack).
-    * Output of R_HP_PROT_R: Connect to the HP_R net, connecting in parallel the R (Ring) pin of the J_HP1_OUT jack and pin 3 of J_HP2_OUT (will connect to the R (Ring) pin of the eventual HP2 jack).
+    * Output of R_HP_PROT_L: Connect to the HP_L net, connecting in parallel the T (Tip) pin of the J_HP1_OUT jack and pin 1 of J_REAR_CONN (to the T (Tip) pin of the HP2 jack).
+    * Output of R_HP_PROT_R: Connect to the HP_R net, connecting in parallel the R (Ring) pin of the J_HP1_OUT jack and pin 3 of J_REAR_CONN (to the R (Ring) pin of the HP2 jack).
     * The signal goes in parallel to the 2 headphones, but when the jumper headers JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R have pins 1&2 bridged, this will indicate headphone 2 is primary. When pins 2&3 bridged this will indicate headphone 1 is primary. Primary means the headphone that controls muting the speaker(s).
 * Headphone Routing:
     * The TN (Tip Normal) pin of J_HP1_OUT: Connect to pin 3 of JP_SW_PRIM_HP_L.
     * The RN (Ring Normal) pin of J_HP1_OUT: Connect to pin 3 of JP_SW_PRIM_HP_R.
     * The S (Sleeve) pin of J_HP1_OUT: Connect to GND.
-    * Pin 4 of J_HP2_OUT (will connect to the TN (Tip Normal) of the HP2 jack): Connect to pin 1 of JP_SW_PRIM_HP_L.
-    * Pin 5 of J_HP2_OUT, representing the RN (Ring Normal) pin of the HP2 jack: Connect to pin 1 of JP_SW_PRIM_HP_R.
-    * Pin 1 of J_HP2_OUT (will connect to the S (Sleeve) pin of the eventual HP2 jack): Connect to GND.
+    * Pin 2 of J_REAR_CONN (to the TN (Tip Normal) pin of the HP2 jack): Connect to pin 1 of JP_SW_PRIM_HP_L.
+    * Pin 4 of J_REAR_CONN (to the RN (Ring Normal) pin of the HP2 jack): Connect to pin 1 of JP_SW_PRIM_HP_R.
+    * Pin 7 of J_REAR_CONN (to the S (Sleeve) pin of the HP2 jack): Connect to GND.
     * Pin 2 of JP_SW_PRIM_HP_L: Connect to pin 1 (L+) of J_SPKR_OUT_L.
     * Pin 2 of JP_SW_PRIM_HP_R: Connect to pin 1 (R+) of J_SPKR_OUT_R.
 * J_SPKR_OUT (Speaker Output Header):
@@ -207,7 +236,7 @@ Block 7: Amplified Output Routing
     * L-/R- pins: Connect directly to the L-/R- outputs of U_AMP.
 
 Block 8: Line-Out Jack
-* J_LINE_OUT:
-    * LINE_OUT_SOURCE_L -> R_LINE_ATTEN_L -> Left Pin of J_LINE_OUT.
-    * LINE_OUT_SOURCE_R -> R_LINE_ATTEN_R -> Right Pin of J_LINE_OUT.
+* Line-out signal connects to J_REAR_CONN:
+    * LINEOUT_SOURCE_L -> R_LINE_ATTEN_L -> pin 5 of J_REAR_CONN.
+    * LINEOUT_SOURCE_R -> R_LINE_ATTEN_R -> pin 6 of J_REAR_CONN.
     * Connect a shunt resistor (R_SHUNT_L/R_SHUNT_R) from each output pin to GND to form the voltage divider.
