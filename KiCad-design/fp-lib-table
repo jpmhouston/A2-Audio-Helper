@@ -5,5 +5,6 @@
   (lib (name "PTR902-1020K-A502")(type "KiCad")(uri "${KIPRJMOD}/../PTR902-1020K-A502")(options "")(descr ""))
   (lib (name "SR11-5V-200-2C")(type "KiCad")(uri "${KIPRJMOD}/../SR11-5V-200-2C")(options "")(descr ""))
   (lib (name "SJ1-3515N")(type "KiCad")(uri "${KIPRJMOD}/../SJ1-3515N")(options "")(descr ""))
-  (lib (name "Molex5267")(type "KiCad")(uri "${KIPRJMOD}/../Molex5267 22035025/footprints.pretty")(options "")(descr ""))
+  (lib (name "Molex 22-05-7025")(type "KiCad")(uri "${KIPRJMOD}/../Molex 22-05-7025")(options "")(descr ""))
+  (lib (name "Molex 22053021")(type "KiCad")(uri "${KIPRJMOD}/../Molex 22053021")(options "")(descr ""))
 )

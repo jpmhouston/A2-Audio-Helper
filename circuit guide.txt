@@ -1,13 +1,14 @@
-Revision 9 Circuit Design (changing connection to rear of case to a single connector and cable)
+Revision 10 Circuit Design (single connector and cable to rear of case, horizontal power & speaker-in connectors)
 
-Libraries for KiCad (add manually, project specific):
-* https://github.com/johnnycubides/pam8403-module-kicad-lib
-* https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (not a repo, download Symbol & Footprint files)
-* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (STEP 3d  model, into above dir)
-* https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (")
-* https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (")
-* https://www.molex.com/en-us/products/part-detail/22035025 (footprint & STEP 3d model to "Molex 5267 22035025" dir)
-* https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (just STEP 3d model)
+Libraries, STEP AP242 3D Models for KiCad (add manually, project specific):
+* https://github.com/johnnycubides/pam8403-module-kicad-lib (downloaded git repo)
+* https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (symbol & footprint files)
+* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (3d model into above dir)
+* https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
+* https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
+* https://www.snapeda.com/parts/22-05-7025/Molex/view-part/ (footprint, 3d model to "Molex 22-05-7025" dir) 
+* https://www.snapeda.com/parts/22053021/Molex/view-part (footprint, 3d model to "Molex 22053021" dir)
+* https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (3d model to "JST B8B-PHDSS" dir)
 
 --
 
@@ -26,24 +27,29 @@ Main Board
 * K1 / RL_AUDIO_RELAY: Relay_DPDT symbol (Mode Relay Routing Audio to Amplifier or Line-Out)
   https://leeselectronic.com/en/product/3219-relayhkehrs2-5vdc-coildpdt1a.html
   https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/
-  footprint SR11-5V-200-2C imported from www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/
+  footprint SR11-5V-200-2C:RELAY_SR11-5V-200-2C
+  3d model SR11-5V-200-2C/SR11-5V-200-2C.step
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
   like J3 / J_SPKR_IN but want something unique so can't be plugged into speaker
-  footprint Molex5267:CONN_22035025_MOL
-  3d model Molex5267 22035025/177308433-659-0022035025/0022035025.stp
-* J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to enable +5V power to U_AMP)
+  https://www.snapeda.com/parts/22-05-7025/Molex/view-part/
+  footprint Molex 22-05-7025:MOLEX_22-05-7025
+  3d model Molex 22-05-7025/178334799-659-0022057025/0022057025.stp
+* J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to Enable +5V power to U_AMP, omitted from pcb currently)
   footprint PinHeader_1x02_P2.54mm_Vertical
 * J3 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
-  https://www.snapeda.com/parts/22272021/Molex/view-part/
-  https://www.molex.com/en-us/products/part-detail/22272021
-  footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
+  https://www.snapeda.com/parts/22053021/Molex/view-part/
+  footprint Molex 22053021:CONN_A-7478-02A_MOL
+  3d model Molex 22053021/178333781-659-0022053021/0022053021.stp
+  was: https://www.snapeda.com/parts/22272021/Molex/view-part/
+       https://www.molex.com/en-us/products/part-detail/22272021
+       footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
 * J4 / J_SCARD_IN: AudioJack3_Ground_Switch symbol (Switching Sound Card Input Jack)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
   footprint SJ1-3515N:CUI_SJ1-3515N
   3d model SJ1-3515N/SJ1-3515N.step
-* J5,6 / JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R: Two Conn_01x03 symbols (Jumpers to Control Which Headphone Jack Mutes Speakers)
+* J5,6 / JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R: Two Conn_01x03 symbols (Jumpers for Which Headphone Jack Mutes Speakers)
   footprint PinHeader_1x03_P2.54mm_Vertical
 * J7 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
   switched jack same as J5 / J_SCARD_IN
