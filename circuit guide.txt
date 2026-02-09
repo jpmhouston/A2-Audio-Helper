@@ -1,4 +1,4 @@
-Revision 10 Circuit Design (single connector and cable to rear of case, horizontal power & speaker-in connectors)
+Revision 10 Circuit Design (1 connector to rear of case, horiz. power & speaker-in connectors, decoupling capacitor)
 
 Libraries, STEP AP242 3D Models for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib (downloaded git repo)
@@ -68,7 +68,8 @@ Main Board
   https://www.snapeda.com/parts/B8B-PHDSS(LF)(SN)/JST%20Sales/view-part/
   footprint Connector_JST:JST_PHD_B8B-PHDSS_2x04_P2.00mm_Vertical
   3d model JST B8B-PHDSS/B8B-PHDSS -LF--SN---3DModel-STEP-56544.STEP
-* J14 / J_TORMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to remote J_RMT_HP1_OUT + R_RMT_VOL)
+* J14 now unused, was separate connector to line-out
+* J15 / J_TORMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to remote J_RMT_HP1_OUT + R_RMT_VOL)
   footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
   https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
   https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
@@ -84,6 +85,8 @@ Main Board
   footprint C_Radial_D5.0mm_H5.0mm_P2.00mm
 * C3 / C_MB_FILTER: 10nF Capacitor (Motherboard Audio Filtering)
   footprint C_Disc_D4.7mm_W2.5mm_P5.00mm
+* C4 / C_AMP_DECOUPLING: 100nF Capacitor (Amp VCC Decoupling Capacitor)
+  footprint Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm
 * R2 / R_MB_FILTER: 1kΩ Resistor (Motherboard Audio Filtering)
 * R3,4 / R_MIX_SCARD_L, R_MIX_SCARD_R: 10kΩ Resistors (Input Mixer for Sound Card Audio)
 * R5,6 / R_MIX_MB_L, R_MIX_MB_R: 10kΩ Resistors (Input Mixer for Motherboard Audio)
@@ -92,6 +95,19 @@ Main Board
 * R11,12 / R_LINE_ATTEN_L, R_LINE_ATTEN_R: 4.7kΩ Resistors (Line-out Attenuation, Series)
 * R13,14 / R_SHUNT_L, R_SHUNT_R: 1kΩ Resistors (Line-out Attenuation, Shunt)
   footprint for all restistors R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+
+|
++----------+
+|          |      U1
+= cap.  +--|--------+
+|       | VCC pin   |
+|       |           |
+|       |   GMD pin |
+|       +----|------+
+|            |
++------------+
+             V
+            GND
 
 Daughterboard
 

@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Apple 2 Audio Helper (daughterboard)")
-		(date "2026-02-06")
-		(rev "0.10.1")
+		(date "2026-02-09")
+		(rev "0.10.3")
 		(company "Northwest Retroventures")
 		(comment 2 "so those components can instead mount flush against angled base of Apple 2 case.")
 		(comment 3 "Use this instead of populating volume knob and headphone jack 1 on main board")
@@ -1784,10 +1784,111 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "10KΩ Dual-gang, switched\nlogarithmic potentiometer\nremote volume knob / amp on-off"
 		(exclude_from_sim no)
-		(at 67.818 105.41 0)
+		(at 67.818 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1801,7 +1902,7 @@
 	)
 	(text "Remote 3.5mm\nHeadphone 1 jack"
 		(exclude_from_sim no)
-		(at 197.612 103.632 0)
+		(at 178.562 112.522 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1815,7 +1916,7 @@
 	)
 	(text "Ribbon cable connector to\nmain board"
 		(exclude_from_sim no)
-		(at 98.552 35.56 0)
+		(at 98.552 27.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1828,18 +1929,30 @@
 		(uuid "5a44c6b4-cfd4-41ab-bf0f-971efbc8289b")
 	)
 	(junction
-		(at 91.44 121.92)
+		(at 91.44 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "085677b5-e478-495a-a259-a637269afc94")
+	)
+	(junction
+		(at 100.33 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57d1761f-7ac6-4d91-8d81-900ef87fcaab")
+	)
+	(junction
+		(at 91.44 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee79c629-1547-4cd5-83f2-90b64dea793f")
 	)
 	(no_connect
-		(at 107.95 50.8)
+		(at 107.95 43.18)
 		(uuid "a7b11d68-c53f-459b-ad6e-f79b0f77c547")
 	)
 	(wire
 		(pts
-			(xy 120.65 74.93) (xy 87.63 74.93)
+			(xy 120.65 83.82) (xy 87.63 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1849,7 +1962,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 116.84) (xy 77.47 134.62)
+			(xy 77.47 125.73) (xy 77.47 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1859,7 +1972,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 50.8) (xy 120.65 74.93)
+			(xy 120.65 43.18) (xy 120.65 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1869,7 +1982,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 121.92) (xy 95.25 121.92)
+			(xy 91.44 128.27) (xy 95.25 128.27)
 		)
 		(stroke
 			(width 0)
@@ -1879,7 +1992,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 86.36) (xy 100.33 109.22)
+			(xy 100.33 95.25) (xy 100.33 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1889,7 +2002,17 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 121.92) (xy 91.44 121.92)
+			(xy 125.73 43.18) (xy 125.73 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12fe4295-9434-4b74-a604-8e0dd97cb5fc")
+	)
+	(wire
+		(pts
+			(xy 87.63 128.27) (xy 91.44 128.27)
 		)
 		(stroke
 			(width 0)
@@ -1899,7 +2022,17 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 77.47) (xy 95.25 101.6)
+			(xy 123.19 43.18) (xy 123.19 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "175b3723-03ac-4daf-8505-fd0c0346927e")
+	)
+	(wire
+		(pts
+			(xy 95.25 86.36) (xy 95.25 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1909,17 +2042,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 50.8) (xy 113.03 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1dc0eab3-941f-4ccb-bd48-b20cd86cc95f")
-	)
-	(wire
-		(pts
-			(xy 102.87 50.8) (xy 102.87 53.34)
+			(xy 102.87 43.18) (xy 102.87 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1929,7 +2052,17 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 83.82) (xy 82.55 83.82)
+			(xy 118.11 43.18) (xy 118.11 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22cbb63f-d9b3-47c6-8f1f-547f981c03ac")
+	)
+	(wire
+		(pts
+			(xy 123.19 92.71) (xy 82.55 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1939,7 +2072,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 121.92) (xy 91.44 124.46)
+			(xy 91.44 128.27) (xy 91.44 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1949,7 +2082,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 104.14) (xy 165.1 104.14)
+			(xy 110.49 113.03) (xy 146.05 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1959,7 +2092,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 50.8) (xy 115.57 111.76)
+			(xy 115.57 43.18) (xy 115.57 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1969,17 +2102,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 50.8) (xy 118.11 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ea05725-194e-4e43-9a07-c03196cbc702")
-	)
-	(wire
-		(pts
-			(xy 87.63 74.93) (xy 87.63 101.6)
+			(xy 87.63 83.82) (xy 87.63 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1989,7 +2112,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 86.36) (xy 100.33 86.36)
+			(xy 128.27 95.25) (xy 100.33 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1999,7 +2122,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 71.12) (xy 77.47 101.6)
+			(xy 77.47 80.01) (xy 77.47 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2009,17 +2132,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 50.8) (xy 125.73 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6082be62-9410-45e4-9dcb-d7ba2e769c4f")
-	)
-	(wire
-		(pts
-			(xy 113.03 106.68) (xy 165.1 106.68)
+			(xy 113.03 115.57) (xy 146.05 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2029,17 +2142,27 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 50.8) (xy 100.33 71.12)
+			(xy 100.33 44.45) (xy 100.33 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "642d3e23-a840-4749-8699-2b3eff8288b0")
+		(uuid "6e167280-21b1-45a5-9f30-12e14d4ee900")
 	)
 	(wire
 		(pts
-			(xy 82.55 83.82) (xy 82.55 109.22)
+			(xy 91.44 63.5) (xy 102.87 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7744b9ef-dd88-4253-8ca3-71d5de9e5bde")
+	)
+	(wire
+		(pts
+			(xy 82.55 92.71) (xy 82.55 118.11)
 		)
 		(stroke
 			(width 0)
@@ -2049,7 +2172,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 77.47) (xy 95.25 77.47)
+			(xy 125.73 86.36) (xy 95.25 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2059,17 +2182,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 50.8) (xy 128.27 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0ede157-7a5d-485d-86a2-a69893cfe509")
-	)
-	(wire
-		(pts
-			(xy 110.49 50.8) (xy 110.49 104.14)
+			(xy 110.49 43.18) (xy 110.49 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2079,17 +2192,17 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 53.34) (xy 90.17 53.34)
+			(xy 91.44 63.5) (xy 91.44 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a9e42820-0839-49a4-b4bc-436d4ba3f262")
+		(uuid "ae2998c2-7e28-4ae3-bf64-7b205512d08e")
 	)
 	(wire
 		(pts
-			(xy 87.63 121.92) (xy 87.63 116.84)
+			(xy 87.63 128.27) (xy 87.63 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2099,7 +2212,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 71.12) (xy 77.47 71.12)
+			(xy 100.33 80.01) (xy 77.47 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2109,7 +2222,17 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 53.34) (xy 90.17 55.88)
+			(xy 128.27 43.18) (xy 128.27 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4fa5b1a-458c-4969-9729-d0a161e56370")
+	)
+	(wire
+		(pts
+			(xy 91.44 66.04) (xy 91.44 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2119,7 +2242,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 109.22) (xy 165.1 109.22)
+			(xy 118.11 118.11) (xy 146.05 118.11)
 		)
 		(stroke
 			(width 0)
@@ -2129,17 +2252,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 50.8) (xy 105.41 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb63ae1f-48fa-452d-b8ac-97f6fe2e26bb")
-	)
-	(wire
-		(pts
-			(xy 165.1 114.3) (xy 165.1 124.46)
+			(xy 146.05 123.19) (xy 146.05 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2149,7 +2262,17 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 134.62) (xy 77.47 134.62)
+			(xy 100.33 43.18) (xy 100.33 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db1a236b-4f48-44ee-98fe-e7d6f826e406")
+	)
+	(wire
+		(pts
+			(xy 105.41 138.43) (xy 77.47 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2159,17 +2282,27 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 50.8) (xy 123.19 83.82)
+			(xy 105.41 43.18) (xy 105.41 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e238bf15-90f6-434f-89b8-f44b3dd17de8")
+		(uuid "ed7f29cc-6372-495c-bded-8ea096d00a71")
 	)
 	(wire
 		(pts
-			(xy 115.57 111.76) (xy 165.1 111.76)
+			(xy 113.03 43.18) (xy 113.03 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3ada1fc-4a43-4325-ac7a-2469a3b45839")
+	)
+	(wire
+		(pts
+			(xy 115.57 120.65) (xy 146.05 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2179,7 +2312,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 121.92) (xy 95.25 116.84)
+			(xy 95.25 128.27) (xy 95.25 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2187,8 +2320,18 @@
 		)
 		(uuid "f61f9a30-7b1f-451b-9a55-b6b7a6a3d59c")
 	)
+	(label "RMT_GND"
+		(at 102.87 59.69 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "07f83a60-473e-466f-b4c8-e24593b6ee06")
+	)
 	(label "RMT_HP1_R"
-		(at 115.57 63.5 90)
+		(at 115.57 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2197,18 +2340,8 @@
 		)
 		(uuid "0d60ef2d-db47-418b-bc6d-d1362f1c8110")
 	)
-	(label "RMT_V_IN"
-		(at 100.33 63.5 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1cd89d74-184f-4e42-9e04-d621c8a29dbb")
-	)
 	(label "RMT_SRC_L"
-		(at 125.73 63.5 90)
+		(at 125.73 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2218,7 +2351,7 @@
 		(uuid "2f6ecea2-0915-424e-85fc-dbe0703cf30d")
 	)
 	(label "RMT_SRC_R"
-		(at 120.65 63.5 90)
+		(at 120.65 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2228,7 +2361,7 @@
 		(uuid "40762deb-e740-4a86-b8e6-bd5f5e00bd12")
 	)
 	(label "RMT_HP1_TN"
-		(at 113.03 63.5 90)
+		(at 113.03 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2238,7 +2371,7 @@
 		(uuid "54119e99-6609-4eda-8d67-8b33eb504ab1")
 	)
 	(label "REM_VOL_L"
-		(at 128.27 63.5 90)
+		(at 128.27 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2248,7 +2381,7 @@
 		(uuid "644f7022-67ab-4776-accf-a50fec3b9a16")
 	)
 	(label "RMT_HP1_RN"
-		(at 118.11 63.5 90)
+		(at 118.11 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2257,8 +2390,18 @@
 		)
 		(uuid "a74a2059-6464-4d43-8bfc-18b83473225a")
 	)
+	(label "RMT_V_IN"
+		(at 100.33 59.69 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bdc07d66-6ada-448f-9dcc-40870e463f63")
+	)
 	(label "RMT_V_AMP"
-		(at 105.41 64.77 90)
+		(at 105.41 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2268,7 +2411,7 @@
 		(uuid "d9b9e196-014c-4462-bad1-f41111a26116")
 	)
 	(label "REM_VOL_R"
-		(at 123.19 63.5 90)
+		(at 123.19 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2278,7 +2421,7 @@
 		(uuid "e4e31664-37be-4b60-95cd-430c7b0a80f7")
 	)
 	(label "RMT_HP1_T"
-		(at 110.49 63.5 90)
+		(at 110.49 59.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2289,7 +2432,7 @@
 	)
 	(symbol
 		(lib_id "PTR902-1020K-A502:PTR902-1020K-A502")
-		(at 87.63 109.22 0)
+		(at 87.63 118.11 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2298,7 +2441,7 @@
 		(dnp no)
 		(uuid "83476986-6acf-408b-ab7e-b24000114820")
 		(property "Reference" "R15"
-			(at 67.818 110.49 0)
+			(at 67.818 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2307,7 +2450,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 67.818 113.03 0)
+			(at 67.818 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2316,7 +2459,7 @@
 			)
 		)
 		(property "Footprint" "PTR902-1020K-A502:TRIM_PTR902-1020K-A502"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2326,7 +2469,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2335,7 +2478,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2344,7 +2487,7 @@
 			)
 		)
 		(property "MF" "Bourns"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2354,7 +2497,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "11.9mm"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2364,7 +2507,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2374,7 +2517,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2384,7 +2527,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/?ref=eda"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2394,7 +2537,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2404,7 +2547,7 @@
 			)
 		)
 		(property "PARTREV" "10/19"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2414,7 +2557,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/?ref=snap"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2424,7 +2567,7 @@
 			)
 		)
 		(property "MP" "PTR902-1020K-A502"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2434,7 +2577,7 @@
 			)
 		)
 		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1443834&manufacturer=Bourns&part_name=PTR902-1020K-A502&search_term=None"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2444,7 +2587,7 @@
 			)
 		)
 		(property "Description_1" "5k Ohm 2 Gang Logarithmic Panel Mount Potentiometer Rotary, SPST 1.0 Kierros Carbon 0.025W, 1/40W PC Pins, Board Locks"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2454,7 +2597,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2464,7 +2607,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Bourns"
-			(at 87.63 109.22 0)
+			(at 87.63 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2508,16 +2651,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 90.17 55.88 0)
+		(at 91.44 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "84bcc1db-40c3-4ada-84b1-33c79948d4b2")
 		(property "Reference" "#PWR014"
-			(at 90.17 62.23 0)
+			(at 91.44 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2525,8 +2667,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND2"
-			(at 90.17 60.96 0)
+		(property "Value" "RMT_GND"
+			(at 91.44 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2534,7 +2676,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 55.88 0)
+			(at 91.44 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2543,7 +2685,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 55.88 0)
+			(at 91.44 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2552,7 +2694,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 55.88 0)
+			(at 91.44 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2573,16 +2715,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 91.44 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8eb264c8-628a-48fa-b4df-e2d683b9f025")
+		(property "Reference" "#FLG06"
+			(at 89.535 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 88.138 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 91.44 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "14b84125-6a2d-4f79-b0fc-6671d9dbaab5")
+		)
+		(instances
+			(project "A2 audio helper"
+				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5/03fd1e11-28b7-476a-9b76-001ec1c19924"
+					(reference "#FLG06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SJ1-3515N:SJ1-3515N")
-		(at 182.88 109.22 180)
+		(at 163.83 118.11 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "ae151725-3066-4b16-a720-d4f156d44bf7")
-		(property "Reference" "J16"
-			(at 197.612 107.95 0)
+		(property "Reference" "J17"
+			(at 178.562 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2591,7 +2799,7 @@
 			)
 		)
 		(property "Value" "SJ1-3515N"
-			(at 197.612 110.49 0)
+			(at 178.562 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2600,7 +2808,7 @@
 			)
 		)
 		(property "Footprint" "SJ1-3515N:CUI_SJ1-3515N"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2610,7 +2818,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2619,7 +2827,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2628,7 +2836,7 @@
 			)
 		)
 		(property "MF" "Same Sky"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2638,7 +2846,7 @@
 			)
 		)
 		(property "Description_1" "3.5 mm, Stereo, Right Angle, Through Hole, 3 Conductors, 2 Internal Switches, Audio Jack Connector"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2648,7 +2856,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2658,7 +2866,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2668,7 +2876,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/SJ1-3515N/Same+Sky/view-part/?ref=eda"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2678,7 +2886,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer recommendation"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2688,7 +2896,7 @@
 			)
 		)
 		(property "PARTREV" "1.03"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2698,7 +2906,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SJ1-3515N/Same+Sky/view-part/?ref=snap"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2708,7 +2916,7 @@
 			)
 		)
 		(property "MP" "SJ1-3515N"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2718,7 +2926,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2728,7 +2936,7 @@
 			)
 		)
 		(property "MANUFACTURER" "CUI"
-			(at 182.88 109.22 0)
+			(at 163.83 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2755,7 +2963,7 @@
 		(instances
 			(project "A2 audio helper 2"
 				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5/03fd1e11-28b7-476a-9b76-001ec1c19924"
-					(reference "J16")
+					(reference "J17")
 					(unit 1)
 				)
 			)
@@ -2763,7 +2971,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 165.1 124.46 0)
+		(at 146.05 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2772,7 +2980,7 @@
 		(fields_autoplaced yes)
 		(uuid "aff497a4-29eb-477d-ac28-c78950aed1ab")
 		(property "Reference" "#PWR015"
-			(at 165.1 130.81 0)
+			(at 146.05 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2780,8 +2988,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND2"
-			(at 165.1 129.54 0)
+		(property "Value" "RMT_GND"
+			(at 146.05 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2789,7 +2997,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 165.1 124.46 0)
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2798,7 +3006,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 165.1 124.46 0)
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2807,7 +3015,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 165.1 124.46 0)
+			(at 146.05 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2829,15 +3037,15 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 113.03 45.72 90)
+		(at 113.03 38.1 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "b6120dc0-c22a-4845-a6b8-47e24020546e")
-		(property "Reference" "J15"
-			(at 98.552 39.37 90)
+		(property "Reference" "J16"
+			(at 98.552 31.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +3054,7 @@
 			)
 		)
 		(property "Value" "PIN HEADER 2x6"
-			(at 98.552 41.91 90)
+			(at 98.552 34.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2855,7 +3063,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical"
-			(at 113.03 45.72 0)
+			(at 113.03 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2864,7 +3072,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 113.03 45.72 0)
+			(at 113.03 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2873,7 +3081,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 113.03 45.72 0)
+			(at 113.03 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2920,7 +3128,73 @@
 		(instances
 			(project "A2 audio helper 2"
 				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5/03fd1e11-28b7-476a-9b76-001ec1c19924"
-					(reference "J15")
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 100.33 44.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf857d9b-b315-42d4-a899-aa7b67399ec8")
+		(property "Reference" "#FLG05"
+			(at 98.425 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 97.028 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 100.33 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c7c57052-65f6-49c1-a51f-2e58945410b2")
+		)
+		(instances
+			(project "A2 audio helper"
+				(path "/5bdcff91-125f-4cf8-8ef8-6f244f2a71f5/03fd1e11-28b7-476a-9b76-001ec1c19924"
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -2928,7 +3202,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 91.44 124.46 0)
+		(at 91.44 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2937,7 +3211,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed36b938-2f4f-471d-8a5c-3d62d14685ee")
 		(property "Reference" "#PWR013"
-			(at 91.44 130.81 0)
+			(at 91.44 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2945,8 +3219,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND2"
-			(at 91.44 129.54 0)
+		(property "Value" "RMT_GND"
+			(at 91.44 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2954,7 +3228,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 124.46 0)
+			(at 91.44 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2963,7 +3237,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 124.46 0)
+			(at 91.44 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2972,7 +3246,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 91.44 124.46 0)
+			(at 91.44 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
