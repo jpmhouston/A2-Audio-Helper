@@ -6,9 +6,8 @@ Libraries, STEP AP242 3D Models for KiCad (add manually, project specific):
 * https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (3d model into above dir)
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
-* https://www.snapeda.com/parts/22-05-7025/Molex/view-part/ (footprint, 3d model to "Molex 22-05-7025" dir) 
-* https://www.snapeda.com/parts/22053021/Molex/view-part (footprint, 3d model to "Molex 22053021" dir)
-* https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (3d model to "JST B8B-PHDSS" dir)
+* https://www.snapeda.com/parts/22053021/Molex/view-part (footprint, 3d model into "Molex 22053021" dir)
+* https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (3d model into "JST B8B-PHDSS" dir)
 
 --
 
@@ -31,10 +30,9 @@ Main Board
   3d model SR11-5V-200-2C/SR11-5V-200-2C.step
 
 * J1 / J_PWR: Conn_01x02 symbol (Main Power Input)
-  like J3 / J_SPKR_IN but want something unique so can't be plugged into speaker
-  https://www.snapeda.com/parts/22-05-7025/Molex/view-part/
-  footprint Molex 22-05-7025:MOLEX_22-05-7025
-  3d model Molex 22-05-7025/178334799-659-0022057025/0022057025.stp
+  JST-XH connector more standard than the molex I picked out of a hat, good footprint & model present in kicad
+  https://www.snapeda.com/parts/S2B-XH-A/JST%20Sales/view-part
+  footprint Connector_JST:JST_XH_S2B-XH-A_1x02_P2.50mm_Horizontal
 * J2 / JP_EN_AMP: Conn_01x02 symbol (Jumper to Enable +5V power to U_AMP, omitted from pcb currently)
   footprint PinHeader_1x02_P2.54mm_Vertical
 * J3 / J_SPKR_IN: Conn_01x02 symbol (Motherboard Audio Input)
