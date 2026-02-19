@@ -1,4 +1,4 @@
-Revision 10 Circuit Design (1 connector to rear of case, horiz. power & speaker-in connectors, decoupling capacitor)
+Revision 10 Circuit Design (1 connector to rear of case, horiz. power & speaker-in connectors, decoupling capacitor, fix to MB_SPKR_IN pin 2)
 
 Libraries, STEP AP242 3D Models for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib (downloaded git repo)
@@ -39,9 +39,6 @@ Main Board
   https://www.snapeda.com/parts/22053021/Molex/view-part/
   footprint Molex 22053021:CONN_A-7478-02A_MOL
   3d model Molex 22053021/178333781-659-0022053021/0022053021.stp
-  was: https://www.snapeda.com/parts/22272021/Molex/view-part/
-       https://www.molex.com/en-us/products/part-detail/22272021
-       footprint Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
 * J4 / J_SCARD_IN: AudioJack3_Ground_Switch symbol (Switching Sound Card Input Jack)
   https://leeselectronic.com/en/product/160956-35mm-stereo-jack-breadboard-friendly.html get this for testing
   https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/
@@ -94,27 +91,14 @@ Main Board
 * R13,14 / R_SHUNT_L, R_SHUNT_R: 1kΩ Resistors (Line-out Attenuation, Shunt)
   footprint for all restistors R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
 
-|
-+----------+
-|          |      U1
-= cap.  +--|--------+
-|       | VCC pin   |
-|       |           |
-|       |   GMD pin |
-|       +----|------+
-|            |
-+------------+
-             V
-            GND
-
 Daughterboard
 
-* J15 / J_RMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
+* J16 / J_RMT_RBNCONN: Conn_02x06 symbol (Ribbon cable connector to/at remote J_HP1_OUT + R_VOL)
   footprint Connector_PinSocket_2.00mm:PinSocket_2x06_P2.00mm_Vertical
   https://www.snapeda.com/parts/M22-7140642/Harwin/view-part/
   https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
   2" cable https://www.snapeda.com/parts/TCMD-06-D-02.00-01/Samtec/view-part/
-* J16 / J_RMT_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
+* J17 / J_RMT_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
   switched jack same as J5 / J_SCARD_IN
   footprint SJ1-3515N:CUI_SJ1-3515N
   3d model SJ1-3515N/SJ1-3515N.step
@@ -152,14 +136,15 @@ Block 1: Main Power Input & Amplifier Power Control
 
 Block 2: Input Stage & Pre-Mixer
 * J_SPKR_IN (Motherboard Audio Header):
-    * Pin 1 (MB_SPKR): The Apple II speaker signal.
-    * Pin 2 (GND): Another Connection to GND.
-* JP_EN_SPKR_IN (Jumper to Enable MB Audio):
-    * Pin 1: Connect to the MB_SPKR signal from J_SPKR_IN.
-    * Pin 2: Connect to the MB_SPKR_ENABLED net.
-    * Effect: Placing a jumper shunt on JP_EN_SPKR_IN enables the motherboard audio. Removing it disables it.
+    * Pin 1 (MB_SPKR): Connect to C_MB_DC_BLOCK, plug connects to Apple II Speaker Switched Output signal, J18 pin 1 (precise pin needs to be verified).
+    * Pin 2: No connection (plug must not connect to J18 pin 2!).
+* JP_EN_SPKR_IN (Jumper to Enable MB Audio, currenly omitted but was in between MB_SPKR pin 1 and C_MB_DC_BLOCK):
+    * Now unused, but was:
+        * Pin 1: Connect to the MB_SPKR signal from J_SPKR_IN.
+        * Pin 2: Connect to the MB_SPKR_ENABLED net (ie. to C_MB_DC_BLOCK).
+        * Effect: Placing a jumper shunt on JP_EN_SPKR_IN enables the motherboard audio. Removing it disables it.
 * Motherboard Audio Conditioning:
-    * The MB_SPKR_ENABLED net goes through series C_MB_DC_BLOCK.
+    * The MB_SPKR signal goes through series C_MB_DC_BLOCK.
     * Then, it goes through series R_MB_FILTER.
     * A C_MB_FILTER capacitor connects from after R_MB_FILTER to GND. This creates the AUDIO_MB_AC net.
 * J_SCARD_IN (Switching Line-In Jack):
