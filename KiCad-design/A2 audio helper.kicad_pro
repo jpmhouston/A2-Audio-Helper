@@ -451,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "A2 audio helper 2.kicad_pro",
+    "filename": "A2 audio helper.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -487,7 +487,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../experimental gerber files/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
