@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Apple 2 Audio Helper")
-		(date "2026-02-18")
-		(rev "0.10.5")
+		(date "2026-02-26")
+		(rev "0.10.6")
 		(company "Northwest Retroventures")
 		(comment 1 "Optionally supports second internal speaker for stereo.")
 		(comment 2 "Outputs to line-out jack & headphone jack 2 (rear of case), jack 1 (front), stock speaker.")
@@ -10173,7 +10173,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PTR902-1020K-A502:TRIM_PTR902-1020K-A502"
+		(property "Footprint" "PTN09S2_H10215K1A:TRIM_PTN09S2-H10215K1A"
 			(at 60.96 161.29 0)
 			(effects
 				(font

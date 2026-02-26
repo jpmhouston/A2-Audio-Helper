@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Apple 2 Audio Helper (daughterboard)")
-		(date "2026-02-18")
-		(rev "0.10.5")
+		(date "2026-02-26")
+		(rev "0.10.6")
 		(company "Northwest Retroventures")
 		(comment 2 "so those components can instead mount flush against angled base of Apple 2 case.")
 		(comment 3 "Use this instead of populating volume knob and headphone jack 1 on main board")
@@ -2458,7 +2458,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "PTR902-1020K-A502:TRIM_PTR902-1020K-A502"
+		(property "Footprint" "PTN09S2_H10215K1A:TRIM_PTN09S2-H10215K1A"
 			(at 87.63 118.11 0)
 			(effects
 				(font
