@@ -1,11 +1,12 @@
-Revision 10 Circuit Design (1 connector to rear of case, horiz. power & speaker-in connectors, decoupling capacitor, fix to MB_SPKR_IN pin 2)
+Revision 12 Circuit Design (New headphone 1 jack, remove rev11 experiment)
 
 Libraries, STEP AP242 3D Models for KiCad (add manually, project specific):
 * https://github.com/johnnycubides/pam8403-module-kicad-lib (downloaded git repo)
-* https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (symbol & footprint files)
-* https://www.bourns.com/resources/design-tools/engineering-files-list?Folder=PTR90 (3d model into above dir)
+* https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/ (symbol file)
+* https://www.digikey.com/en/models/24767735 (footprint, 3d model files PTN09S2-H10215K1A analogue to PTR902)
 * https://www.snapeda.com/parts/SR11-5V-200-2C/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
 * https://www.snapeda.com/parts/SJ1-3515N/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
+* https://www.snapeda.com/parts/SJ1-3535/Same%20Sky/view-part/ (symbol, footprint, 3d model files)
 * https://www.snapeda.com/parts/22053021/Molex/view-part (footprint, 3d model into "Molex 22053021" dir)
 * https://www.snapeda.com/parts/B8B-PHDSS%20%28LF%29%28SN%29/JST/view-part/ (3d model into "JST B8B-PHDSS" dir)
 
@@ -46,15 +47,10 @@ Main Board
   3d model SJ1-3515N/SJ1-3515N.step
 * J5,6 / JP_SW_PRIM_HP_L, JP_SW_PRIM_HP_R: Two Conn_01x03 symbols (Jumpers for Which Headphone Jack Mutes Speakers)
   footprint PinHeader_1x03_P2.54mm_Vertical
+
 * J7 / J_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
-  switched jack same as J5 / J_SCARD_IN
-  however... this results in jack 3mm lower than the knob, perhaps instead:
-    - vertical SJ3-35053D on offset board connected by https://www.samtec.com/products/mtsw-105-22-t-s-330-ra
-    - design the offset board as another break-off board, with footprints of jack and a 2.54mm 5 pin header
-    - main board (/daughter board) footprint becomes that of another 2.54mm 5 pin header
-    - position on main board such that front of jack line up with front of knob R1
-  footprint SJ1-3515N:CUI_SJ1-3515N
-  3d model SJ1-3515N/SJ1-3515N.step
+  https://www.snapeda.com/parts/SJ1-3535/Same%20Sky/view-part/
+  footprint SJ1-3535:CUI_SJ1-3535
 * J8 now unused, was separate connector to hp1 jack
 * J9,10 / J_SPKR_OUT_L, J_SPKR_OUT_L: Conn_01x02 symbol (Speaker Output)
   https://www.snapeda.com/parts/22272021/Molex/view-part/
@@ -104,21 +100,20 @@ Daughterboard
   https://www.snapeda.com/parts/SMM-106-01-S-D/Samtec/view-part/
   2" cable https://www.snapeda.com/parts/TCMD-06-D-02.00-01/Samtec/view-part/
 * J17 / J_RMT_HP1_OUT: AudioJack3_Ground_Switch symbol (Switching Headphone 1 Jack)
-  switched jack same as J5 / J_SCARD_IN
-  footprint SJ1-3515N:CUI_SJ1-3515N
-  3d model SJ1-3515N/SJ1-3515N.step
+  https://www.snapeda.com/parts/SJ1-3535/Same%20Sky/view-part/
+  footprint SJ1-3535:CUI_SJ1-3535
 * R15 / R_RMT_VOL: 10KΩ Switched Dual-Gang Logarithmic Potentiometer (Volume Knob)
   https://www.snapeda.com/parts/PTR902-1015K-A103/Bourns/view-part/
   (model files from the similar 5KΩ part www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/)
   footprint PTR902-1020K-A502
   3d model PTR902-1020K-A502/ptr901-2x15k-xxxx.stp
 
-Also
+Also (not on any board or schematic)
 
-* J17 / J_LINEOUT: Rear case jack, 3.5mm panel mount audiom, switching 5 pin
+* J17 / J_LINEOUT (Rear Case Line-Out Jack)
   Samesky SJ3-35053D 3.5 mm Stereo Jack, Through Hole, 3 Conductors, 2 Internal Switches 
   https://www.sameskydevices.com/product/interconnect/connectors/audio-connectors/jacks/sj3-35053d
-* J18 / J_HP2: Rear case jack, 3.5mm panel mount audiom, 3 pin
+* J18 / J_HP2 (Rear Case Headphone 2 Jack)
   Samesky SJ3-35053A 3.5 mm Stereo Jack, Through Hole, 3 Conductors, 0 Internal Switches 
   https://www.sameskydevices.com/product/interconnect/connectors/audio-connectors/jacks/sj3-35053a
 
