@@ -7,7 +7,7 @@
 	(title_block
 		(title "Apple 2 Audio Helper (daughterboard)")
 		(date "2026-02-27")
-		(rev "0.12")
+		(rev "0.12.2")
 		(company "Northwest Retroventures")
 		(comment 2 "so those components can instead mount flush against angled base of Apple 2 case.")
 		(comment 3 "Use this instead of populating volume knob and headphone jack 1 on main board")

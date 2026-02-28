@@ -8,4 +8,5 @@
   (lib (name "Molex 22053021")(type "KiCad")(uri "${KIPRJMOD}/../Molex 22053021")(options "")(descr ""))
   (lib (name "PTN09S2_H10215K1A")(type "KiCad")(uri "${KIPRJMOD}/../PTN09S2_H10215K1A")(options "")(descr ""))
   (lib (name "SJ1-3535")(type "KiCad")(uri "${KIPRJMOD}/../SJ1-3535")(options "")(descr ""))
+  (lib (name "EG2209")(type "KiCad")(uri "${KIPRJMOD}/../EG2209")(options "")(descr ""))
 )
