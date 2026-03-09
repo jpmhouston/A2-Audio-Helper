@@ -1,0 +1,218 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "PTR902-1020K-A502" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "R" (id 0) (at -22.86 2.54 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "PTR902-1020K-A502" (id 1) (at -22.86 0.0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "PTR902-1020K-A502:TRIM_PTR902-1020K-A502" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MF" "Bourns" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MAXIMUM_PACKAGE_HEIGHT" "11.9mm" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Package" "None" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Price" "None" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Check_prices" "https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/?ref=eda" (id 8) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "STANDARD" "Manufacturer Recommendations" (id 9) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PARTREV" "10/19" (id 10) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "SnapEDA_Link" "https://www.snapeda.com/parts/PTR902-1020K-A502/Bourns/view-part/?ref=snap" (id 11) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MP" "PTR902-1020K-A502" (id 12) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1443834&manufacturer=Bourns&part_name=PTR902-1020K-A502&search_term=None" (id 13) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Description" "\n                        \n                            5k Ohm 2 Gang Logarithmic Panel Mount Potentiometer Rotary, SPST 1.0 Kierros Carbon 0.025W, 1/40W PC Pins, Board Locks\n                        \n" (id 14) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Availability" "In Stock" (id 15) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "Bourns" (id 16) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "PTR902-1020K-A502_0_0"
+      (polyline
+        (pts (xy 0.0 5.08) (xy 0.0 4.572)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 0.0 4.572) (xy 1.016 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 3.81) (xy -1.27 2.54)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -1.27 2.54) (xy 1.016 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 1.27) (xy -1.27 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -1.27 0.0) (xy 1.016 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 -1.27) (xy -1.27 -2.54)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -1.27 -2.54) (xy 1.016 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.016 -3.81) (xy 0.0 -4.572)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 -4.572) (xy 0.0 -5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -1.27 0.0) (xy -2.54 -1.27)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy -2.54 1.27) (xy -1.27 0.0)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy -2.54 -1.27) (xy -2.54 1.27)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy 7.62 5.08) (xy 7.62 4.572)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 7.62 4.572) (xy 6.604 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.604 3.81) (xy 8.89 2.54)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 8.89 2.54) (xy 6.604 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.604 1.27) (xy 8.89 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 8.89 0.0) (xy 6.604 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.604 -1.27) (xy 8.89 -2.54)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 8.89 -2.54) (xy 6.604 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.604 -3.81) (xy 7.62 -4.572)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 7.62 -4.572) (xy 7.62 -5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 8.89 0.0) (xy 10.16 -1.27)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy 10.16 1.27) (xy 8.89 0.0)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy 10.16 -1.27) (xy 10.16 1.27)) (stroke (width 0.2032))
+      )
+      (polyline
+        (pts (xy -10.16 -2.54) (xy -12.2936 2.794)) (stroke (width 0.1524))
+      )
+      (circle (center -10.16 2.54) (radius 0.3302)
+        (stroke (width 0.1524)) (fill (type none))
+      )
+      (polyline
+        (pts (xy -10.16 5.08) (xy -10.16 2.921)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -10.16 -2.54) (xy -10.16 -5.08)) (stroke (width 0.1524))
+      )
+      (text "SW" (at -16.256 -7.874 0)
+        (effects (font (size 1.524 1.524)) (justify bottom left))
+      )
+      (text "R2" (at -5.334 -7.874 0)
+        (effects (font (size 1.524 1.524)) (justify bottom left))
+      )
+      (text "R1" (at 3.048 -7.874 0)
+        (effects (font (size 1.524 1.524)) (justify bottom left))
+      )
+      (pin passive line (at 0.0 7.62 270.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R2_3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 0.0 -7.62 90.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R2_1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -5.08 0.0 0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R2_2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 7.62 7.62 270.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R1_3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 7.62 -7.62 90.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R1_1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 12.7 0.0 180.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "R1_2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -7.62 90.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "COM"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 7.62 270.0) (length 2.54)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "NO"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,221 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "SR11-5V-200-2C" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "K" (id 0) (at -5.08 11.43 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "SR11-5V-200-2C" (id 1) (at -5.08 -12.7 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Footprint" "SR11-5V-200-2C:RELAY_SR11-5V-200-2C" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "DigiKey_Part_Number" "2223-SR11-5V-200-2C-ND" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "SnapEDA_Link" "https://www.snapeda.com/parts/SR11-5V-200-2C/Same+Sky/view-part/?ref=snap" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MAXIMUM_PACKAGE_HEIGHT" "11.70mm" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Package" "None" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Check_prices" "https://www.snapeda.com/parts/SR11-5V-200-2C/Same+Sky/view-part/?ref=eda" (id 8) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "STANDARD" "Manufacturer Recommendations" (id 9) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PARTREV" "1.01" (id 10) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MF" "Same Sky" (id 11) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MP" "SR11-5V-200-2C" (id 12) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Description" "\n                        \n                            20.3 x 9.9 x 11.4 mm, 5 V, 1 A, DPDT (2 Form C), Through Hole, Signal Relay\n                        \n" (id 13) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "SNAPEDA_PN" "SR11-12V-200-2C" (id 14) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "CUI Devices" (id 15) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "SR11-5V-200-2C_0_0"
+      (polyline
+        (pts (xy -5.08 5.08) (xy -2.54 5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -3.81 0.635) (xy -2.54 0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -2.54 0.635) (xy -1.27 0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -1.27 0.635) (xy -1.27 -0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -1.27 -0.635) (xy -2.54 -0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -2.54 -0.635) (xy -3.81 -0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -3.81 -0.635) (xy -3.81 0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -5.08 -5.08) (xy -2.54 -5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -2.54 5.08) (xy -2.54 0.635)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy -2.54 -0.635) (xy -2.54 -5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 5.08 -5.08) (xy 3.556 -5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 2.286 -2.54) (xy 2.286 -3.556)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts
+          (xy 2.667 -3.302)
+          (xy 1.905 -3.302)
+          (xy 2.286 -4.064)
+          (xy 2.667 -3.302)
+        )
+        (stroke (width 0.1524)) (fill (type outline))
+      )
+      (polyline
+        (pts (xy 2.286 -2.54) (xy 5.08 -2.54)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 3.556 -5.08) (xy 1.778 -3.937)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 2.286 -7.62) (xy 2.286 -6.604)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts
+          (xy 2.667 -6.858)
+          (xy 1.905 -6.858)
+          (xy 2.286 -6.096)
+          (xy 2.667 -6.858)
+        )
+        (stroke (width 0.1524)) (fill (type outline))
+      )
+      (polyline
+        (pts (xy 2.286 -7.62) (xy 5.08 -7.62)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 5.08 5.08) (xy 3.556 5.08)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 2.286 7.62) (xy 2.286 6.604)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts
+          (xy 2.667 6.858)
+          (xy 1.905 6.858)
+          (xy 2.286 6.096)
+          (xy 2.667 6.858)
+        )
+        (stroke (width 0.1524)) (fill (type outline))
+      )
+      (polyline
+        (pts (xy 2.286 7.62) (xy 5.08 7.62)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 3.556 5.08) (xy 1.778 6.223)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts (xy 2.286 2.54) (xy 2.286 3.556)) (stroke (width 0.1524))
+      )
+      (polyline
+        (pts
+          (xy 2.667 3.302)
+          (xy 1.905 3.302)
+          (xy 2.286 4.064)
+          (xy 2.667 3.302)
+        )
+        (stroke (width 0.1524)) (fill (type outline))
+      )
+      (polyline
+        (pts (xy 2.286 2.54) (xy 5.08 2.54)) (stroke (width 0.1524))
+      )
+      (rectangle (start -5.08 -10.16) (end 5.08 10.16)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at 10.16 5.08 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "COM1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 10.16 2.54 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "NO1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 5.08 0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "A1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -5.08 0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "A2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 10.16 7.62 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "NC1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 10.16 -5.08 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "COM2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 10.16 -7.62 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "NO2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at 10.16 -2.54 180.0) (length 5.08)
+        (name "~"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "NC2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)
